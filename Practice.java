@@ -5,11 +5,15 @@ import java.util.List;
 public class Practice {
     public static void main(String[] args) {
 //        int[] nums = new int[] {0,2,2};
-        int[] nums = new int[] {-1000,-1000,-1000};
+//        int[] nums = new int[] {-1000,-1000,-1000};
+        // int[] nums = new int[] {2000000000,2099999999,2099999999};
+        String[] operations = new String[] {"++X","--X","--X"};
 //        List<Integer> result = findDisappearedNumbers(nums);
 //        System.out.println("Result is" + result);
 //        sortColors(nums);
-        System.out.println("Result is " + maximumProduct(nums));
+        // System.out.println("Result is " + maximumProduct(nums));
+        // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
+        System.out.println("Result of x is " + finalValueAfterOperations(operations));
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -92,5 +96,23 @@ public class Practice {
             return productOfMin2 * max1;
         } else return productOfMax2 * max1;
     }
+
+    public static int[] runningSum(int[] nums) {
+        for(int i=1; i<nums.length; i++) {
+            nums[i] = nums[i] + nums[i-1];
+        }
+        return nums;
+    }
+
+    public static int finalValueAfterOperations(String[] operations) {
+        int x=0;
+        for(int i=0; i<operations.length; i++) {
+            if(operations[i].equals("X--") || operations[i].equals("--X")) x--;
+            else x++;
+        }
+        return x;
+    }
+
+
 
 }
