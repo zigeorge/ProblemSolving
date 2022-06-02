@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Practice {
@@ -7,13 +8,16 @@ public class Practice {
 //        int[] nums = new int[] {0,2,2};
 //        int[] nums = new int[] {-1000,-1000,-1000};
         // int[] nums = new int[] {2000000000,2099999999,2099999999};
-        String[] operations = new String[] {"++X","--X","--X"};
+        // String[] operations = new String[] {"++X","--X","--X"};
+        int[] digits = new int[] {2,8,4,8,0,2,8,8,3,8,3,6,6,7,9};
 //        List<Integer> result = findDisappearedNumbers(nums);
 //        System.out.println("Result is" + result);
 //        sortColors(nums);
         // System.out.println("Result is " + maximumProduct(nums));
         // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
-        System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // findEvenNumbers(digits);
+        System.out.println("Result even numbers " + Arrays.toString(findEvenNumbers(digits)));
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -113,6 +117,67 @@ public class Practice {
         return x;
     }
 
-
+    public static int[] findEvenNumbers(int[] digits) {
+        HashMap<Integer, Integer> resultMap = new HashMap<>();
+        HashMap<Integer, Integer> digitsMap = new HashMap<>();
+        int resultIndex = 0;
+        int i=0;
+        while(i<digits.length){
+            if(!digitsMap.containsKey(digits[i])){
+                // System.out.println("Key "+digits[i]+" value "+1);
+                digitsMap.put(digits[i], 1);
+            } else {
+                int val = digitsMap.get(digits[i]);
+                val++;
+                digitsMap.put(digits[i], val);
+                // System.out.println("Key "+digits[i]+" Value "+val);
+            }
+            i++;
+        }
+        System.out.println(digitsMap);
+        int minEven = 100;
+        while(minEven < 1000) {
+            int d1 = minEven%10;
+            int md = (minEven-d1)/10;
+            int d2 = md%10;
+            md = (md-d2)/10;
+            int d3 = md%10;
+            // System.out.println("minEven= "+minEven+" d1= "+d1+" d2= "+d2+" d3= "+d3);
+            if(digitsMap.containsKey(d1)&&digitsMap.containsKey(d2)&&digitsMap.containsKey(d3)) {
+                if(minEven==888){
+                System.out.println("minEven= "+minEven+" d1= "+d1+" d2= "+d2+" d3= "+d3);
+                System.out.println("digitsMap.get(d1)= "+digitsMap.get(d1)+" digitsMap.get(d2)= "+digitsMap.get(d2)+" digitsMap.get(d3)= "+digitsMap.get(d3));}
+                if(d1==d2 && d2==d3) {
+                    if(digitsMap.get(d1) >= 3) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else if(d1==d2 || d1==d3) {
+                    if(digitsMap.get(d1) >= 2) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else if(d2==d3) {
+                    if(digitsMap.get(d2) >= 2) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else {
+                    resultMap.put(resultIndex, minEven);
+                    // System.out.println("resultIndexed");
+                    resultIndex++;
+                }
+            }
+            minEven+=2;
+        }
+        int[] result = new int[resultMap.size()];
+        for(int m=0; m<resultMap.size(); m++) {
+            result[m] = resultMap.get(m);
+        }
+        return result;
+    }
 
 }
