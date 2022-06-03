@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Practice {
@@ -13,6 +14,20 @@ public class Practice {
 //        sortColors(nums);
         // System.out.println("Result is " + maximumProduct(nums));
         // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
+        // System.out.println("Hello World");
+        // int[] sample = {2,1,2,0,0,1};
+        // boolean solution = solution(sample);
+        // System.out.println("Result:: "+solution);
+        // System.out.println(printRLE("xxxxcdfffxxxdcc"));
+        // String[] words = new String[] { "cat", "baby", "ear", "bread", "dog", "bird", "car", "ax"};
+        // String string1 = "tcabnihjs";
+        // String string2 = "tbcanihjs";
+        // String string3 = "baykkjl";
+        // String string4 = "bbabylkkj";
+        // String string5 = "ccc";
+        // String string6 = "breadmaking";
+        // System.out.println("The result is "+solutionT(words, string6));
+        // sortColors(sample);
         System.out.println("Result of x is " + finalValueAfterOperations(operations));
     }
 
@@ -113,6 +128,155 @@ public class Practice {
         return x;
     }
 
+    public static String solutionT(String[] words, String string) {
+        for(int i=0; i<words.length; i++) {
+          HashMap<Character, Integer> strMap = getMapForString(string);
+        //   System.out.println("Word:: "+words[i]);
+          for(int j=0; j<words[i].length(); j++) {      
+            // System.out.println("Character:: "+words[i].charAt(j));
+            Integer value = strMap.get(words[i].charAt(j));
+            if(value == null || value == 0) {
+              break;
+            } 
+            // System.out.println("Value:: "+value);
+            value--;
+            if(j == words[i].length()-1) return words[i];
+            strMap.put(words[i].charAt(j), value);
+          }
+        }
+        return "null";
+      }
+      
+      public static HashMap<Character, Integer> getMapForString(String string) {
+        HashMap<Character, Integer> mapStr = new HashMap<Character, Integer>();
+        for(int i=0; i<string.length(); i++) {
+          if(mapStr.get(string.charAt(i)) != null) {
+            Integer value = mapStr.get(string.charAt(i)) + 1;
+            mapStr.put(string.charAt(i), value);
+          } else {
+            mapStr.put(string.charAt(i), 1);            
+          }
+        }
+        return mapStr;
+      }
 
+    // Below is the problem of longest increasing subsequence
+    public static boolean solution(int[] sequence) {
+        int max = 0;
+        int[] list = new int[sequence.length];
+        Arrays.fill(list, 1);
+        for(int i=1; i<sequence.length; i++) {
+            for(int j=0; j<i; j++) {
+                if(sequence[i] > sequence[j] && list[i] < list[j] + 1) {
+                    list[i] = list[j] + 1;
+                }
+            }
+            if(max < list[i]) max = list[i];
+        }
+        return sequence.length - max < 2;
+    }
 
+    public static String printRLE(String str) {
+        String resultStr = "";
+        int n = str.length();
+        for(int i=0; i<n; i++) {
+            int count = 1;
+            while(i<n-1 && str.charAt(i) == str.charAt(i+1)) {
+                count++;
+                i++;
+            }
+            resultStr = resultStr + count + str.charAt(i);
+        }
+        return resultStr;
+    }
+
+    
 }
+ /*
+
+You are running a classroom and suspect that some of your students are passing around the answers to multiple choice questions disguised as random strings.
+
+Your task is to write a function that, given a list of words and a string, finds and returns the word in the list that is scrambled up inside the string, if any exists. There will be at most one matching word. The letters don't need to be in order or next to each other. The letters cannot be reused.
+
+Example:
+words = ['cat', 'baby', 'dog', 'bird', 'car', 'ax']
+string1 = 'tcabnihjs'
+find_embedded_word(words, string1) -> cat (the letters do not have to be in order)
+
+string2 = 'tbcanihjs'
+find_embedded_word(words, string2) -> cat (the letters do not have to be together)
+
+string3 = 'baykkjl'
+find_embedded_word(words, string3) -> None / null (the letters cannot be reused)
+
+string4 = 'bbabylkkj'
+find_embedded_word(words, string4) -> baby
+
+string5 = 'ccc'
+find_embedded_word(words, string5) -> None / null
+
+string6 = 'breadmaking'
+find_embedded_word(words, string6) -> bird
+
+All Test Cases:
+find_embedded_word(words, string1) -> cat
+find_embedded_word(words, string2) -> cat
+find_embedded_word(words, string3) -> None / null
+find_embedded_word(words, string4) -> baby
+find_embedded_word(words, string5) -> None / null
+find_embedded_word(words, string6) -> bird
+
+Complexity analysis variables:
+
+W = number of words in `words`
+S = maximal length of each word or string
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+  public static void main(String[] argv) {
+    String[] words = new String[] { "cat", "baby", "dog", "bird", "car", "ax"};
+    String string1 = "tcabnihjs";
+    String string2 = "tbcanihjs";
+    String string3 = "baykkjl";
+    String string4 = "bbabylkkj";
+    String string5 = "ccc";
+    String string6 = "breadmaking";
+    System.out.println("The result is "+solution(words, string1));
+  }
+  
+  public static String solution(String[] words, String string) {
+    for(int i=0; i<words.length; i++) {
+      HashMap<String, Integer> strMap = getMapForString(string);
+      for(int j=0; j<words[i].length(); j++) {      
+        if(strMap.get(words[i].charAt(j)) == null) {
+          break;
+        } 
+        Integer value = strMap.get(words[i].charAt(j));
+        if(j == words[i].length()-1) return words[i];
+        strMap.put(words[i].charAt(j)+"", value--);
+      }
+    }
+    return "null";
+  }
+  
+  public static HashMap<String, Integer> getMapForString(String string) {
+    HashMap<String, Integer> mapStr = new HashMap();
+    for(int i=0; i<string.length(); i++) {
+      if(mapStr.get(string.charAt(i)) != null) {
+        Integer value = mapStr.get(string.charAt(i)) + 1;
+        mapStr.put(string.charAt(i)+"", value);
+      } else {
+        mapStr.put(string.charAt(i)+"", 1);
+        
+      }
+    }
+    return mapStr;
+  }
+  
+}
+
+*/
