@@ -10,11 +10,21 @@ public class Practice {
 //        int[] nums = new int[] {-1000,-1000,-1000};
         // int[] nums = new int[] {2000000000,2099999999,2099999999};
         // String[] operations = new String[] {"++X","--X","--X"};
+<<<<<<< HEAD
+=======
+        int[] digits = new int[] {2,8,4,8,0,2,8,8,3,8,3,6,6,7,9};
+>>>>>>> 29edd394098a3216c7b15151bceac52492ca74e1
 //        List<Integer> result = findDisappearedNumbers(nums);
 //        System.out.println("Result is" + result);
 //        sortColors(nums);
         // System.out.println("Result is " + maximumProduct(nums));
         // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
+<<<<<<< HEAD
+        // System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // findEvenNumbers(digits);
+        // System.out.println("Result even numbers " + Arrays.toString(findEvenNumbers(digits)));
+        System.out.println("Result of search is " + searchMatrix(new int[][]{{-1,0,4},{5,9,10}}, -5));
+=======
         // System.out.println("Hello World");
         // int[] sample = {2,1,2,0,0,1};
         // boolean solution = solution(sample);
@@ -29,11 +39,16 @@ public class Practice {
         // String string6 = "breadmaking";
         // System.out.println("The result is "+solutionT(words, string6));
         // sortColors(sample);
+<<<<<<< HEAD
         // System.out.println("Result of x is " + finalValueAfterOperations(operations));
         // System.out.println("The Nums Contains duplicate " + containsDuplicate(nums));
         // System.out.println("The single number is " + singleNumber(nums));
         int[] nums = new int[] {-10,-10,10,2};
         System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));
+=======
+        System.out.println("Result of x is " + finalValueAfterOperations(operations));
+>>>>>>> 9ff55f5bd14250a19cad48e9c5911f3c95bc4752
+>>>>>>> 29edd394098a3216c7b15151bceac52492ca74e1
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -133,6 +148,86 @@ public class Practice {
         return x;
     }
 
+<<<<<<< HEAD
+    public static int[] findEvenNumbers(int[] digits) {
+        HashMap<Integer, Integer> resultMap = new HashMap<>();
+        HashMap<Integer, Integer> digitsMap = new HashMap<>();
+        int resultIndex = 0;
+        int i=0;
+        while(i<digits.length){
+            if(!digitsMap.containsKey(digits[i])){
+                // System.out.println("Key "+digits[i]+" value "+1);
+                digitsMap.put(digits[i], 1);
+            } else {
+                int val = digitsMap.get(digits[i]);
+                val++;
+                digitsMap.put(digits[i], val);
+                // System.out.println("Key "+digits[i]+" Value "+val);
+            }
+            i++;
+        }
+        System.out.println(digitsMap);
+        int minEven = 100;
+        while(minEven < 1000) {
+            int d1 = minEven%10;
+            int md = (minEven-d1)/10;
+            int d2 = md%10;
+            md = (md-d2)/10;
+            int d3 = md%10;
+            // System.out.println("minEven= "+minEven+" d1= "+d1+" d2= "+d2+" d3= "+d3);
+            if(digitsMap.containsKey(d1)&&digitsMap.containsKey(d2)&&digitsMap.containsKey(d3)) {
+                if(minEven==888){
+                System.out.println("minEven= "+minEven+" d1= "+d1+" d2= "+d2+" d3= "+d3);
+                System.out.println("digitsMap.get(d1)= "+digitsMap.get(d1)+" digitsMap.get(d2)= "+digitsMap.get(d2)+" digitsMap.get(d3)= "+digitsMap.get(d3));}
+                if(d1==d2 && d2==d3) {
+                    if(digitsMap.get(d1) >= 3) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else if(d1==d2 || d1==d3) {
+                    if(digitsMap.get(d1) >= 2) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else if(d2==d3) {
+                    if(digitsMap.get(d2) >= 2) {
+                        resultMap.put(resultIndex, minEven);
+                        // System.out.println("resultIndexed");
+                        resultIndex++;
+                    }
+                } else {
+                    resultMap.put(resultIndex, minEven);
+                    // System.out.println("resultIndexed");
+                    resultIndex++;
+                }
+            }
+            minEven+=2;
+        }
+        int[] result = new int[resultMap.size()];
+        for(int m=0; m<resultMap.size(); m++) {
+            result[m] = resultMap.get(m);
+        }
+        return result;
+    }
+
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        int[] targetArray = new int[]{};
+        for(int i=0; i<matrix.length; i++) {
+            if(target>=matrix[i][0] && target<=matrix[i][matrix[0].length-1]) {
+                targetArray = matrix[i];
+                break;
+            }
+        }
+        System.out.println("Result even numbers " + Arrays.toString(targetArray));
+        if(targetArray == null) return false;
+        for(int i=0; i< targetArray.length; i++) {
+            if(target == targetArray[i]) return true;
+        }
+        return false;
+    }
+=======
     public static String solutionT(String[] words, String string) {
         for(int i=0; i<words.length; i++) {
           HashMap<Character, Integer> strMap = getMapForString(string);
@@ -248,6 +343,7 @@ public class Practice {
 You are running a classroom and suspect that some of your students are passing around the answers to multiple choice questions disguised as random strings.
 
 Your task is to write a function that, given a list of words and a string, finds and returns the word in the list that is scrambled up inside the string, if any exists. There will be at most one matching word. The letters don't need to be in order or next to each other. The letters cannot be reused.
+>>>>>>> 9ff55f5bd14250a19cad48e9c5911f3c95bc4752
 
 Example:
 words = ['cat', 'baby', 'dog', 'bird', 'car', 'ax']
