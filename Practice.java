@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,21 +9,13 @@ public class Practice {
 //        int[] nums = new int[] {-1000,-1000,-1000};
         // int[] nums = new int[] {2000000000,2099999999,2099999999};
         // String[] operations = new String[] {"++X","--X","--X"};
-<<<<<<< HEAD
-=======
         int[] digits = new int[] {2,8,4,8,0,2,8,8,3,8,3,6,6,7,9};
->>>>>>> 29edd394098a3216c7b15151bceac52492ca74e1
 //        List<Integer> result = findDisappearedNumbers(nums);
 //        System.out.println("Result is" + result);
 //        sortColors(nums);
         // System.out.println("Result is " + maximumProduct(nums));
         // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
-<<<<<<< HEAD
-        // System.out.println("Result of x is " + finalValueAfterOperations(operations));
-        // findEvenNumbers(digits);
-        // System.out.println("Result even numbers " + Arrays.toString(findEvenNumbers(digits)));
         System.out.println("Result of search is " + searchMatrix(new int[][]{{-1,0,4},{5,9,10}}, -5));
-=======
         // System.out.println("Hello World");
         // int[] sample = {2,1,2,0,0,1};
         // boolean solution = solution(sample);
@@ -39,17 +30,12 @@ public class Practice {
         // String string6 = "breadmaking";
         // System.out.println("The result is "+solutionT(words, string6));
         // sortColors(sample);
-<<<<<<< HEAD
         // System.out.println("Result of x is " + finalValueAfterOperations(operations));
         // System.out.println("The Nums Contains duplicate " + containsDuplicate(nums));
         // System.out.println("The single number is " + singleNumber(nums));
         int[] nums = new int[] {-10,-10,10,2};
-        System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));
-=======
+        System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));System.out.println("Result of x is " + finalValueAfterOperations(operations));
         System.out.println("Result of x is " + finalValueAfterOperations(operations));
->>>>>>> 9ff55f5bd14250a19cad48e9c5911f3c95bc4752
->>>>>>> 29edd394098a3216c7b15151bceac52492ca74e1
-    }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
 //        int max = nums.length;
@@ -148,7 +134,6 @@ public class Practice {
         return x;
     }
 
-<<<<<<< HEAD
     public static int[] findEvenNumbers(int[] digits) {
         HashMap<Integer, Integer> resultMap = new HashMap<>();
         HashMap<Integer, Integer> digitsMap = new HashMap<>();
@@ -226,8 +211,7 @@ public class Practice {
             if(target == targetArray[i]) return true;
         }
         return false;
-    }
-=======
+    }    
     public static String solutionT(String[] words, String string) {
         for(int i=0; i<words.length; i++) {
           HashMap<Character, Integer> strMap = getMapForString(string);
@@ -321,13 +305,14 @@ public class Practice {
     }
 
     public static int[][] construct2DArray(int[] original, int m, int n) {
+        if(m*n < original.length) return new int[][]{};
         int[][] resultMatrix = new int[m][n];
         int index=0, i=0, j=0;
         while(index<original.length) {
             if(i<m) {
                 // System.out.println("i= "+i+" Index= "+index);
                 if(j<n) {
-                    System.out.println("j= "+j+" Value = "+original[index]);
+                    // System.out.println("j= "+j+" Value = "+original[index]);
                     resultMatrix[i][j] = original[index];
                     index++; j++;
                 } else {
@@ -343,7 +328,6 @@ public class Practice {
 You are running a classroom and suspect that some of your students are passing around the answers to multiple choice questions disguised as random strings.
 
 Your task is to write a function that, given a list of words and a string, finds and returns the word in the list that is scrambled up inside the string, if any exists. There will be at most one matching word. The letters don't need to be in order or next to each other. The letters cannot be reused.
->>>>>>> 9ff55f5bd14250a19cad48e9c5911f3c95bc4752
 
 Example:
 words = ['cat', 'baby', 'dog', 'bird', 'car', 'ax']
