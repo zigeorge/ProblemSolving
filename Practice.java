@@ -17,7 +17,8 @@ public class Practice {
         // System.out.println("Result of running sum is " + Arrays.toString(runningSum(nums)));
         // System.out.println("Result of x is " + finalValueAfterOperations(operations));
         // findEvenNumbers(digits);
-        System.out.println("Result even numbers " + Arrays.toString(findEvenNumbers(digits)));
+        // System.out.println("Result even numbers " + Arrays.toString(findEvenNumbers(digits)));
+        System.out.println("Result of search is " + searchMatrix(new int[][]{{-1,0,4},{5,9,10}}, -5));
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -179,5 +180,22 @@ public class Practice {
         }
         return result;
     }
+
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        int[] targetArray = new int[]{};
+        for(int i=0; i<matrix.length; i++) {
+            if(target>=matrix[i][0] && target<=matrix[i][matrix[0].length-1]) {
+                targetArray = matrix[i];
+                break;
+            }
+        }
+        System.out.println("Result even numbers " + Arrays.toString(targetArray));
+        if(targetArray == null) return false;
+        for(int i=0; i< targetArray.length; i++) {
+            if(target == targetArray[i]) return true;
+        }
+        return false;
+    }
+
 
 }
