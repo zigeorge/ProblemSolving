@@ -1,3 +1,4 @@
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -5,10 +6,10 @@ import java.util.List;
 
 public class Practice {
     public static void main(String[] args) {
-//        int[] nums = new int[] {0,2,2};
+    //    int[] nums = new int[] {-10,-10,10,2,2};
 //        int[] nums = new int[] {-1000,-1000,-1000};
         // int[] nums = new int[] {2000000000,2099999999,2099999999};
-        String[] operations = new String[] {"++X","--X","--X"};
+        // String[] operations = new String[] {"++X","--X","--X"};
 //        List<Integer> result = findDisappearedNumbers(nums);
 //        System.out.println("Result is" + result);
 //        sortColors(nums);
@@ -28,7 +29,11 @@ public class Practice {
         // String string6 = "breadmaking";
         // System.out.println("The result is "+solutionT(words, string6));
         // sortColors(sample);
-        System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // System.out.println("The Nums Contains duplicate " + containsDuplicate(nums));
+        // System.out.println("The single number is " + singleNumber(nums));
+        int[] nums = new int[] {-10,-10,10,2};
+        System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -190,7 +195,53 @@ public class Practice {
         return resultStr;
     }
 
+    public static boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> uniqMap = new HashMap<>();
+        for(int i=0; i<nums.length; i++) {
+            if(uniqMap.get(nums[i]) != null) {
+                return true;
+            } else {
+                uniqMap.put(nums[i], 1);
+            }
+        }
+        return false;
+    }
+
+    public static int missingNumber(int[] nums) {
+        int xor = 0, i = 0;
+        for (i = 0; i < nums.length; i++) {
+            xor ^= i ^ nums[i];
+            System.out.println("xor " +xor+ " i "+i+" nums[i] " +nums[i]);
+        }
+
+        return xor ^ i;
+    }
     
+    public static int singleNumber(int[] nums) {
+        int singleNumber = nums[0];
+        for(int i=1; i<nums.length; i++) {
+            singleNumber^=nums[i];
+        }
+        return singleNumber;
+    }
+
+    public static int[][] construct2DArray(int[] original, int m, int n) {
+        int[][] resultMatrix = new int[m][n];
+        int index=0, i=0, j=0;
+        while(index<original.length) {
+            if(i<m) {
+                // System.out.println("i= "+i+" Index= "+index);
+                if(j<n) {
+                    System.out.println("j= "+j+" Value = "+original[index]);
+                    resultMatrix[i][j] = original[index];
+                    index++; j++;
+                } else {
+                    i++; j=0;
+                }
+            } else break;
+        }
+        return resultMatrix;
+    }
 }
  /*
 
