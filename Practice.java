@@ -33,9 +33,10 @@ public class Practice {
         // System.out.println("Result of x is " + finalValueAfterOperations(operations));
         // System.out.println("The Nums Contains duplicate " + containsDuplicate(nums));
         // System.out.println("The single number is " + singleNumber(nums));
-        int[] nums = new int[] {-10,-10,10,2};
-        System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));System.out.println("Result of x is " + finalValueAfterOperations(operations));
-        System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // System.out.println("Result of x is " + finalValueAfterOperations(operations));
+        // int[] nums = new int[] {-10,-10,10,2};
+        // System.out.println("Resulted 2D Array " + Arrays.toString(construct2DArray(nums, 2, 2)));System.out.println("Result of x is " + finalValueAfterOperations(operations));
+    }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
 //        int max = nums.length;
