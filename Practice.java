@@ -50,7 +50,12 @@ public class Practice {
         // ArrayList<>(List.of(3))));
         // plusMinus(new ArrayList<>(List.of(-1, -9, -2, -3, 0, -2, -3, -1)));
         // miniMaxSum(new ArrayList<>(List.of(1147555557, 2, 2147483647, 1111111143, 2127483647)));
-        System.out.println(timeConversion("11:00:01AM"));
+        // System.out.println(timeConversion("11:00:01AM"));
+        // System.out.println("Find Median " + findMedian(List.of(0,1,6,3,5,7,4)));
+        // System.out.println("Find Unique " + lonelyinteger(List.of(1)));
+        // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
+        System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
+
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -365,12 +370,10 @@ public class Practice {
             totalSum += nums.get(i);
         }
         Collections.sort(nums);
-        int partitionIndex = (nums.size() - 1) / 2;
         List<Integer> setA = new ArrayList<>();
         int setASum = 0;
         for (int i = nums.size() - 1; i >= 0; i--) {
             if (!setA.contains(nums.get(i))) {
-                boolean add2 = setA.add(nums.get(i));
                 setASum += nums.get(i);
             } else {
                 setA.remove(nums.get(i));
@@ -437,101 +440,56 @@ public class Practice {
         return s.substring(0,s.length()-2);
     }
 
+    public static int findMedian(List<Integer> arr) {
+        // Write your code here
+        List<Integer> nums = new ArrayList<Integer>(arr);
+        for(int i=0; i<nums.size(); i++) {
+            for(int j=i+1; j<arr.size(); j++) {
+                if(nums.get(i) > arr.get(j)) {
+                    Collections.swap(nums, i, j);
+                }
+            }
+        }
+        return arr.get(arr.size()/2);
+    }
+
+    public static int lonelyinteger(List<Integer> a) {
+        // Write your code here
+        int xor = 0;
+        for(int i=0; i<a.size(); i++) {
+            xor ^= a.get(i);
+        }
+        return xor;
+    }
+
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        // Write your code here
+        int i=0,j=0, k=arr.get(0).size()-1, sumX = 0, sumY = 0;
+        while(j<arr.get(0).size()) {
+            sumX+=arr.get(i).get(j); sumY+=arr.get(i).get(k);
+            i++; j=j+1; k=k-1;
+        }
+        System.out.println(sumX +" "+sumY);
+        return Math.abs(sumX-sumY);
+    }
+
+    public static List<Integer> countingSort(List<Integer> arr) {
+        // Write your code here
+        ArrayList<Integer> nArr = new ArrayList<>(arr);
+        int[] nums = new int[10];
+        Arrays.fill(nums, 0);
+        for(int i=0; i<nArr.size(); i++){
+            nums[nArr.get(i)]++;
+        }
+        int index = 0, i=0;
+        while(index<nArr.size()) {
+            if(nums[i]==0) i++;
+            else {
+                nArr.set(index, i);
+                index++; nums[i]--;
+            }
+        }
+        return nArr;
+    }
+
 }
-/*
- * 
- * You are running a classroom and suspect that some of your students are
- * passing around the answers to multiple choice questions disguised as random
- * strings.
- * 
- * Your task is to write a function that, given a list of words and a string,
- * finds and returns the word in the list that is scrambled up inside the
- * string, if any exists. There will be at most one matching word. The letters
- * don't need to be in order or next to each other. The letters cannot be
- * reused.
- * 
- * Example:
- * words = ['cat', 'baby', 'dog', 'bird', 'car', 'ax']
- * string1 = 'tcabnihjs'
- * find_embedded_word(words, string1) -> cat (the letters do not have to be in
- * order)
- * 
- * string2 = 'tbcanihjs'
- * find_embedded_word(words, string2) -> cat (the letters do not have to be
- * together)
- * 
- * string3 = 'baykkjl'
- * find_embedded_word(words, string3) -> None / null (the letters cannot be
- * reused)
- * 
- * string4 = 'bbabylkkj'
- * find_embedded_word(words, string4) -> baby
- * 
- * string5 = 'ccc'
- * find_embedded_word(words, string5) -> None / null
- * 
- * string6 = 'breadmaking'
- * find_embedded_word(words, string6) -> bird
- * 
- * All Test Cases:
- * find_embedded_word(words, string1) -> cat
- * find_embedded_word(words, string2) -> cat
- * find_embedded_word(words, string3) -> None / null
- * find_embedded_word(words, string4) -> baby
- * find_embedded_word(words, string5) -> None / null
- * find_embedded_word(words, string6) -> bird
- * 
- * Complexity analysis variables:
- * 
- * W = number of words in `words`
- * S = maximal length of each word or string
- * 
- * 
- * 
- * import java.io.*;
- * import java.util.*;
- * 
- * public class Solution {
- * public static void main(String[] argv) {
- * String[] words = new String[] { "cat", "baby", "dog", "bird", "car", "ax"};
- * String string1 = "tcabnihjs";
- * String string2 = "tbcanihjs";
- * String string3 = "baykkjl";
- * String string4 = "bbabylkkj";
- * String string5 = "ccc";
- * String string6 = "breadmaking";
- * System.out.println("The result is "+solution(words, string1));
- * }
- * 
- * public static String solution(String[] words, String string) {
- * for(int i=0; i<words.length; i++) {
- * HashMap<String, Integer> strMap = getMapForString(string);
- * for(int j=0; j<words[i].length(); j++) {
- * if(strMap.get(words[i].charAt(j)) == null) {
- * break;
- * }
- * Integer value = strMap.get(words[i].charAt(j));
- * if(j == words[i].length()-1) return words[i];
- * strMap.put(words[i].charAt(j)+"", value--);
- * }
- * }
- * return "null";
- * }
- * 
- * public static HashMap<String, Integer> getMapForString(String string) {
- * HashMap<String, Integer> mapStr = new HashMap();
- * for(int i=0; i<string.length(); i++) {
- * if(mapStr.get(string.charAt(i)) != null) {
- * Integer value = mapStr.get(string.charAt(i)) + 1;
- * mapStr.put(string.charAt(i)+"", value);
- * } else {
- * mapStr.put(string.charAt(i)+"", 1);
- * 
- * }
- * }
- * return mapStr;
- * }
- * 
- * }
- * 
- */
