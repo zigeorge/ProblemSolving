@@ -54,7 +54,8 @@ public class Practice {
         // System.out.println("Find Median " + findMedian(List.of(0,1,6,3,5,7,4)));
         // System.out.println("Find Unique " + lonelyinteger(List.of(1)));
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
-        System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
+        // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
+        System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
 
     }
 
@@ -475,21 +476,48 @@ public class Practice {
 
     public static List<Integer> countingSort(List<Integer> arr) {
         // Write your code here
-        ArrayList<Integer> nArr = new ArrayList<>(arr);
-        int[] nums = new int[10];
+        // ArrayList<Integer> nArr = new ArrayList<>(arr);
+        Integer[] nums = new Integer[100];
         Arrays.fill(nums, 0);
-        for(int i=0; i<nArr.size(); i++){
-            nums[nArr.get(i)]++;
+        for(int i=0; i<arr.size(); i++){
+            nums[arr.get(i)]++;
         }
-        int index = 0, i=0;
-        while(index<nArr.size()) {
-            if(nums[i]==0) i++;
-            else {
-                nArr.set(index, i);
-                index++; nums[i]--;
+        // int index = 0, i=0;
+        // while(index<nArr.size()) {
+        //     if(nums[i]==0) i++;
+        //     else {
+        //         nArr.set(index, i);
+        //         index++; nums[i]--;
+        //     }
+        // }
+        return Arrays.asList(nums);
+    }
+
+    public static int flippingMatrix(List<List<Integer>> matrix) {
+        // Write your code here
+        int i=0, j=0; int n = matrix.size()/2-1;
+        int max = 0;
+        while(i<=n && j<=n) {
+            max+=maxOf(i,j, matrix);
+            j++;
+            if(j>n) {
+                i++; j=0;
             }
         }
-        return nArr;
+        return max;
+    }
+
+    public static int maxOf(int i, int j, List<List<Integer>> matrix) {
+        int count = 1; int len = matrix.size()-1; int max = 0;
+        while(count <= 4) {
+            if(max < matrix.get(i).get(j)) {
+                max = matrix.get(i).get(j);
+            }
+            j = len-j;
+            count++;
+            if(count%2==0) i = len-i;
+        }
+        return max;
     }
 
 }
