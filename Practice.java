@@ -55,7 +55,10 @@ public class Practice {
         // System.out.println("Find Unique " + lonelyinteger(List.of(1)));
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
-        System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
+        // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
+
+        // System.out.println(climbStairs(45));
+        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
 
     }
 
@@ -518,6 +521,34 @@ public class Practice {
             if(count%2==0) i = len-i;
         }
         return max;
+    }
+
+    public static int climbStairs(int n) {
+        int a = 0;
+        int b = 1;
+        int c = a+b;
+        for(int i=2; i<=n; i++) {
+            a=b;
+            b=c;
+            c=a+b;
+        }
+        return c;
+    }
+
+    public static int maxProfit(int[] prices) {
+        int buyingPrice = prices[0];
+        int maxProfit = 0;
+
+        for(int i=1; i<prices.length; i++) {
+            if(buyingPrice<prices[i]) {
+                int profit = prices[i]-buyingPrice;
+                if(profit > maxProfit) {
+                    maxProfit = profit;
+                }
+            } else buyingPrice = prices[i];
+        }
+
+        return maxProfit;
     }
 
 }
