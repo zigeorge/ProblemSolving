@@ -56,10 +56,17 @@ public class Practice {
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
         // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
+<<<<<<< HEAD
         // findZigZagSequence(new int[]{2,3,5,1,4,7,6}, 7);
         // System.out.println(towerBreakers(7,2));
         // System.out.println(caesarCipher("middle-Outz",22));
         System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
+=======
+
+        // System.out.println(climbStairs(45));
+        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+
+>>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -523,6 +530,7 @@ public class Practice {
         return max;
     }
 
+<<<<<<< HEAD
     public static void findZigZagSequence(int [] a, int n){
         Arrays.sort(a);
         int mid = (n)/2;
@@ -607,6 +615,34 @@ public class Practice {
         }
         return isPalindrome ? li : -1;
     
+=======
+    public static int climbStairs(int n) {
+        int a = 0;
+        int b = 1;
+        int c = a+b;
+        for(int i=2; i<=n; i++) {
+            a=b;
+            b=c;
+            c=a+b;
+        }
+        return c;
+    }
+
+    public static int maxProfit(int[] prices) {
+        int buyingPrice = prices[0];
+        int maxProfit = 0;
+
+        for(int i=1; i<prices.length; i++) {
+            if(buyingPrice<prices[i]) {
+                int profit = prices[i]-buyingPrice;
+                if(profit > maxProfit) {
+                    maxProfit = profit;
+                }
+            } else buyingPrice = prices[i];
+        }
+
+        return maxProfit;
+>>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
     }
 
 }
