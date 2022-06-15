@@ -55,8 +55,11 @@ public class Practice {
         // System.out.println("Find Unique " + lonelyinteger(List.of(1)));
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
-        System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
-
+        // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
+        // findZigZagSequence(new int[]{2,3,5,1,4,7,6}, 7);
+        // System.out.println(towerBreakers(7,2));
+        // System.out.println(caesarCipher("middle-Outz",22));
+        System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -518,6 +521,92 @@ public class Practice {
             if(count%2==0) i = len-i;
         }
         return max;
+    }
+
+    public static void findZigZagSequence(int [] a, int n){
+        Arrays.sort(a);
+        int mid = (n)/2;
+        int temp = a[mid];
+        a[mid] = a[n - 1];
+        a[n - 1] = temp;
+    
+        int st = mid + 1;
+        int ed = n - 2;
+        int ia = 1;
+        while(st <= ed){
+            temp = a[st];
+            a[st] = a[ed];
+            a[ed] = temp;
+            st = st + 1;
+            ed = ed - 1;
+            System.out.println(ia++);
+        }
+        for(int i = 0; i < n; i++){
+            if(i > 0) System.out.print(" ");
+            System.out.print(a[i]);
+        }
+        System.out.println();
+    }
+
+    public static int towerBreakers(int n, int m) {
+        return ((m==1) || (n%2 == 0)) ? 2 : 1;
+    }
+
+    public static String caesarCipher(String s, int k) {
+        // Write your code here
+        k=k%26;
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<s.length(); i++) {
+            int ascii = (int) s.charAt(i);
+            if(Character.isLetter(s.charAt(i))) {
+                if(Character.isLowerCase(s.charAt(i))) {
+                    if(ascii+k > 122) sb.append((char) (ascii+k-26));
+                    else sb.append((char) (ascii+k));
+                } else {
+                    if(ascii+k > 90) sb.append((char) (ascii+k-26));
+                    else sb.append((char) (ascii+k));
+                }
+            } else sb.append(s.charAt(i));
+        }
+        return sb.toString();
+    }
+
+    public static boolean isAlphabatic(char ch) {
+        int ascii = ch;
+        // return (ascii >= 97 && ascii <= 122) || (ascii >= 65 && ascii <= 90);
+        return Character.isLetter(ch);
+    }
+
+    public static int palindromeIndex(String s) {
+        // Write your code here
+        boolean isPalindrome = true;
+        int fi=0, li=s.length()-1;
+        while(fi < li) {
+            if(s.charAt(fi) != s.charAt(li)) {            
+                isPalindrome = false;
+                break;
+            } else {
+                fi++; li--;
+            }
+        }
+        if(isPalindrome) return -1;
+        isPalindrome = true;
+        for(int i=fi+1, j=li; i<j; i++,j--) {
+            if(s.charAt(i) != s.charAt(j)) {            
+                isPalindrome = false;
+                break;
+            }
+        }
+        if(isPalindrome) return fi;
+        isPalindrome = true;
+        for(int i=fi, j=li-1; i<j; i++,j--) {
+            if(s.charAt(i) != s.charAt(j)) {            
+                isPalindrome = false;
+                break;
+            }
+        }
+        return isPalindrome ? li : -1;
+    
     }
 
 }
