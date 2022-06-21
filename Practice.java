@@ -1,13 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
 public class Practice {
-    private static boolean add;
 
     public static void main(String[] args) {
         // int[] nums = new int[] {-10,-10,10,2,2};
@@ -56,17 +53,16 @@ public class Practice {
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
         // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
-<<<<<<< HEAD
         // findZigZagSequence(new int[]{2,3,5,1,4,7,6}, 7);
         // System.out.println(towerBreakers(7,2));
         // System.out.println(caesarCipher("middle-Outz",22));
-        System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
-=======
+        // System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
 
         // System.out.println(climbStairs(45));
-        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        // System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println(arraySum(new ArrayList<>(List.of(7,1,5,3,6,4))));
 
->>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
+
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -530,7 +526,6 @@ public class Practice {
         return max;
     }
 
-<<<<<<< HEAD
     public static void findZigZagSequence(int [] a, int n){
         Arrays.sort(a);
         int mid = (n)/2;
@@ -579,12 +574,6 @@ public class Practice {
         return sb.toString();
     }
 
-    public static boolean isAlphabatic(char ch) {
-        int ascii = ch;
-        // return (ascii >= 97 && ascii <= 122) || (ascii >= 65 && ascii <= 90);
-        return Character.isLetter(ch);
-    }
-
     public static int palindromeIndex(String s) {
         // Write your code here
         boolean isPalindrome = true;
@@ -614,8 +603,8 @@ public class Practice {
             }
         }
         return isPalindrome ? li : -1;
+    }
     
-=======
     public static int climbStairs(int n) {
         int a = 0;
         int b = 1;
@@ -642,7 +631,18 @@ public class Practice {
         }
 
         return maxProfit;
->>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
+    }
+
+    public static int arraySum(List<Integer> numbers) {
+        // Write your code here
+        return sum(numbers, numbers.get(0), 1);
+    }
+
+    public static int sum(List<Integer> numbers,int currSum, int position) {
+        if(position < numbers.size()) {
+            currSum+=numbers.get(position);
+            return sum(numbers, currSum, position+1);
+        } else return currSum;
     }
 
 }
