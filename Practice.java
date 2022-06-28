@@ -4,7 +4,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Practice {
     private static boolean add;
@@ -56,17 +58,17 @@ public class Practice {
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
         // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
-<<<<<<< HEAD
         // findZigZagSequence(new int[]{2,3,5,1,4,7,6}, 7);
         // System.out.println(towerBreakers(7,2));
         // System.out.println(caesarCipher("middle-Outz",22));
-        System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
-=======
+        // System.out.println(palindromeIndex("prcoitfiptvcxrvoalqmfpnqyhrubxspplrftomfehbbhefmotfrlppsxburhyqnpfmqlaorxcvtpiftiocrp"));
 
         // System.out.println(climbStairs(45));
-        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        // System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        // System.out.println(maxSubArraySum(new int[]{-7,-1,-5,-3,-6,-4}));
+        // System.out.println(largestVariance("zcvvynowcmlskevtnpxtwblgxchvfyghobygbboeaynurjvtjsfjpzcjaqjnsgcxwlxbszcreulumbetpfpbyhnacmgglgdxoqlsxoskexjxjsummnekjsldwiisoqkizhulnljwmivpoawcwxqwulkuwvlnbpiqrksgtphnygvmahzcqjxkbmruebmttjhjfpkuaskkrmwmhcxtdcbhwnrdrgipqzwskbwzkkptahzueyapkagogjycobupnexfyikqkuikfzxhapdxoaaptfryourudjaexhcvxcqblhzeikevnqaobtsjfgcuvgvqrdbvuueddngvalrmjlxozgbobyrcwttcksincbtulmwvnxcvycargrhqlzawxkpavfetfiomxiykthpsswwkygrjobvublscngahcqeltlvkfizmbsjmnyjlfaodtidpufagzqxrohctmcefksmxqujxhuerlpxwyecmqfsjxiwtgnlzhfkeqctunrllcjddxtxseimrpdrymwqsrdxqjpyzulcvssgfltyjfynmtgcrhstpjfsqgaxnjjagmghrqxtkibjzwuozwyoqnmdvtvxlqnpbybptnveugatngkkadyunbbmftvumybjviknkqnadrhyzyjlilqzkwafxthlbxoedagpzmxmnfzjoezuizceagrhhhcdvrqmfrqjqhcfqqhiozemxrkqcptogyzcrnmzpcekplbfgdtqitszrgqrlkdmwlxnwroywimfcrfdakzvedxxzakkhxmgdcchwdqnywybnohkwbjvxybvwbannuhlbrnocmedjmwjtfrmomlcbgktkrdwohhrxygebbynnrjvyyedtblyhldtzajlexyiubjurczdytegzuuakiiggosmgqdabgemnvzpgbqsyprigktjoadednwhyyezebkoyubceebbmqeshsbkpnurcsliklbhlqbbctacdikdmghavbjxwhxcnjhdiaollrwtukonmhcluulllxvcguzpqnazdojerrpikoomwscjuqasvknezepcmlhdmerqfryimztmwsfbcsngwisejojinkechatxykspkbhyqvswnegaavxbpfywdhkvbbrbutaiwoeajhkqmpfjchbzrmjfbhbdhcgctbcdhwvkozhartflxykgxhhmwazysnxhomthcypphsjbpvxopqygvalkjvxvwftnnxwoxcupdvnpqmpnbdzncgrifqaqumcsbiqstvskyqjguqmavmfjjysysdzgxlepeccxjgammxmeobyzbwjjajzxpdeaxxjadajcdyewvbvehkmtvtfdqnlllihdiybjrpvmkilxqhnonmuswrgwsxuvqcnrtsnxohkuxhshimsxznfcamqvvktvjeitbfbaojtzxwewiyekqcbnuzzamsadwdemqucfwmahqjykktyukwuzgbyiqnttagkrjieaohgrzxwjujkmlmvwfpblrvqqzwuiefhgzdqdvmfssrnkyxbylsrrmlupjqtrlayzafrentgytadrdzbqvpgfskfystwkvkpievcajkltqsjdvodqqgfqbcsawupkgnbvotsjumjodhttwzryteoorfocpdjmqnhwdqjgvdcmshytaustwprelpzkfuystzcxgexcoindyzzmesknlsyzxfaundmfxfpcdrmczyubmgkvnqgzqnlrjswovxzwznkjgieukikhmkvqdgxhrlzzjjbpcybalkzhyfecgfmjfliqfltzanswgyazdnptflgbblumcbsdbvseqnafhdilmdpfcmqexgeotwdxhcnnemueguvozaevlykkfbxrasvpqiwzrmdskbuuzuqdlmjrqeicnabttqzofsdttjvwzeyeklrwnrvcstgjhjdeiprndgkgpweokxhffdpdxjxootpkvpuxshamsxaxxzeguuslhghwezszbbrjiwwmffdrenxwvobimvcvcgquykbqegbqeaayckrdxitixavrrobsdtxovgsfczdtikeejucicfemmipkddhokggfxwabbppunysfzcfvabomhjnximmlrhxqotnxqhsptunkdnscernxbhqnpkbxnqaeyvjygkkxjzzqlybvvqaybqdzpaeerpcpansadmxvhoqfsvnfunlrdalyqlddiqslgkxqiuhaeagiluvsrtfyaljrsjpqiegegfhscnfzzpiqxgfnjnbixerdkvnlmmwtdicuzqqvjumswgpekfbtmkfemneyclqwvmvjwksczteospbnfrzolpgcvbxkppsjyvhugmufjqdyllcjktrxehpwmivlgnbsjummecqypnwskxdcbarxqqcbxxwewhalclctsaqvmywceppflzvwlkcxhlziwbshpjorqpqevanelvjpdhmfpuoixkisipksbuvxokfdyqxxpwpnvhvpirksdiefcmahsmalmmuwaexloezeaipcysxwsyfhhwvceviiilserjxlgtovblzjhqpmydtfgaqcgmhpstnkcqgxzfbffeuebctofyhorzexhqavagxqgztrekjccrhleqiprvmyhmablqrsfnjnfebyzctmbjgiuxlqgsmhubyekjqgvnecrrwwoqhgyamzqhkwbzykcyvqvhlparxzjaxjikxsuixqkzfsxgllypgamqcwlfizkzwivkjnxsapbaacugcxgnopafcohbqzubwixofrqxagltvbinkdwaauvnccwqpuhaknkvxlqmvanyncfzivxzxlxtckabhizhytvoboelcsafoltektwgdruyucxzplgnvnajvwzruxbpwkufazpjgvvhccqqpebtasfsqkxknitvokhxptejcnfsnirmkbebxsdflthmogkhxxdttoevyfmzbaxellblynxvmnryrygalvsrfylqbctdenynlnnfmnhobitebjbkrjkrkldnecfmutysdvfpvflupzwadttzuihzwuecfyntkquslqjlvnyqlbstzynozmdomzbdhyvvbdhzrfymrztqxqfpxntosmlfgocbbmagqgfboqcjzkfzxmyvyhxklorceqrrimavjaudgwychyzerprkikmtuivblbxrxiltxxtyirbjdsdxlsstnnzdonatcntyhxetmomcvdgtxofsrfwfxbrakmpwkpjrplwxvqdncoasskwxgfttpurllmkgnvqohtliegpooommufowggovxoapgvyoadeyxsbmyvlhborsvyvcjjehgxlupxherqqfpbpzouaupnztdxqxnswusgjasxavmifgsqchchrurhkhdyfzkahilfhnsjofmvicrjjbwfqdoyamndaerpjulrpobregqkoiuhqnpuxdclxmcmsfdudzdofwmrwbhqjnsrpwsxgpyuonnfjcgeljtugdtwxgjtohyjivnpswggxhszugknrgvrygdcwnbehardprlgidkavkdojrdxtclbqrcbmodbxklikomqnsrflzenktlwwgtgeeblhmmvnrqpbxflxbiuzzxqwznvdaffffxvpdnnteczfygcbfxnsvicxsmxoqmebjkdlnhekgasxhgaipejkthwzcakdyzlaovpecipbmeokvgfxrgtvqkkgpyyvykczatektgizvixvbchltobdmihcvmzyksnasftanpyohnmslgktppjvpypdeurcxgrsoanvtjzhzhskivzbjliqeuumkzqtodtpmhcrgbdglajbdtscvxoxibkydandpqzfbgsnaykzjmwfleaejkcfhmzgxjbrlhinnyacpookxatenptfwmplunnbtjhywuudocxfwaiigckqskpyfzngxwxczdeztacjzmdcrfihtyzxrjhdssrufzkrlsfotftrzschqdvmiwwogqykytoexpqexgqylpwromoevedzkcvzhlubfckmleffuvwtvkewfjzybniotjthreqrryvaekfasrqyzjylzxayfxrfrpofibrstqqfftmbvkfidhdgqwjphccsfqqdyjrxwfzjsvmucnlciucnmodrfbkaxzseeiuuazvihrbscpxtzvuielchlupituocqlrrvivoonnpcfkpeajorrxnckggodosezcpeqgrogbkaeicglceegdmbvkzwainoxqcodkrgaakhniwydcosppodsbynotesucujgqeosxitjasxbpidyezygysyweudlyuwqgvnubaxhxlwdfgxwmyjhohyppeftaxkknndltifinaevpptswlphmemkzbtlywpowkfbwomjskhwptqsmbuyutkbruwbqmfdjochwcsdpnxktgoevxkwjainujeqngtroqnomgtvzzndshlvaipqjrcxqmjuxrrqnjwccobvpeylinnhvejlodxgrfirtmpvqtuvnqopoejetedzagruxvatovaefbwwrwsectnqpoxuurykrlrllfrhbcrudvmohubkkdutsfcaehtcvhzhxwqnnnkszmzjaoizpwgqiqsvhblcdjhgpfgfejpdnszvqzlejlsbmwukxptzodshdbzvcycjchcpwxhtzunzuqsxkvzuyunwpljrxuwrbzqmahtmltmgdoveayhcguozimoiuxbnukzjawemjfvgcryyyexbnkyfuwqpkmfyjdeafwfrsytqirshrdzxooukzmkbruuokbkpwbdopzujpjqahavubsktgymfczmbtlzlyistapwgrfxygsqrhkvkrfauduqpknhfbwyffpagyzkfcofvjbnmraextiklynuivodnrahknxowdlrwrfawribmqodyzzxndgnfanpbvqjjwakhcklduahmjdjvwachezghqavcbrehftpxkqzkqtuclgsdfpkxwtacqzbxxjsahcnosrergofndlstvatlqgfgppojeqzmilawlzcqekudbilrdfqcgwnrfcxhgabralrwinwffiwfhtmdjiwwkoqlcwvyrgjqsvcjfcumopiqfuacuolsptqiqhyqwtrutpptpotqtygkkoiykjlofchclepscffgemxjnvnzqabcxsegttsrliybmtsoreijzrvljoecmgouymtrmtheihyivokvcbbcxsqtcazrzldiwnonxfgyrryqujeclpvjhlfkvsgkpmeucdlfsfvmwayinjqztzelyipdzwkavhpacrqizzjegzdrmvpsbbyjpytntocorqifmhprojlzvbveaipkxrsautzklmwfldrjejgluuuloufxhwkbfypiypovxojwiynakxoaddsclfjapqyrscpbkjamvzhvkwrjzasjhqnayjtyhkuszxswcldkojyymxaivuwawtdpitselvykoprtemlfjnsqnrqxlqqidyxlmdvbhjcnmvdbfpeerobsvnrnlbjesjmcdyswhkshoipedwrwhwxjrcalxtppffqsuwqtrnotlthutuwyasebfqrgmmxwzakzjxwpwcbdfyxeszoyulgsfirvnjqzmtgaeldgevojzkwxzynkihthgktywgjqysdpxtqegopwjxombppcrqnskzpkwbvqeziskfvpwrmrrpumsaigwdcarahbcrpkmujdxtzhcoiihnmxlrmufgqomokpifymhfavpslunkwwbwgrvrodetajhhmiplwzfswwfennumxaavqqarsiesxpvriolncrypashsopmhumkxjroyotgllkwikqgplsaknyafdkanrtfydhzctfypnvgfcorbswcfzhjrbueucazprizypkopdwcpmkzeqtiwlugfgyjumjrxnfpwzfvlexhcrcwiguadenaulilekzlrhclxkezbhqsqtwvsrmgxjvykdhqwsuyxmtapmvztcchbkxdjqrooadmnmorquzybexamtlusppraqdzxmnzcdpukabvtkdgmzlzkhfpgbypwtmagbiobrusvlfqyoafljdrqjxaqeuuysqdymhxsmlmjficiovbnhtzvesdauvcrksozgafvymllqmqmrixwbztylhesymklicfgkbzwctksohmtwcxqrlqkujhstssggvhhwvjmydjeovvgjqfoptedsbpvlfburxxmxlxgqzqwzlozglvcgxvdyfpcrieyyamznpgpyfzrzshzimcbzseznebmnevyizhrlllddexufoemlwkflsxthgynoexayicpzmasrdvyxhswfvozjjjmgttbjnayxsqxooxerkxpdhgiapzpvqrknzgrjmczqlsmrzxctrinmcpuilhakqqjhzduuvojhththiyftqnpndnvfvdgmvblnfzgnshtlgwwbbcgeiilvuieryelmnhjqfegyhzgqeygplyhhlgmupxcizbkruwoftnnjiaswckvbycbggzwmldfqtigcgxdqboefoclihtwyggwqdqimawcablijdlgvkiyzzzczitaosbyjtfqwrgpgyshyteyqtaiarbfcrhvixqsnijdvzdllxgqzteluhnfdzazotvlicxswouzbqcgxrpkhniqxgisvkmvcgclnywlcwkhwgdhyhemcbepredvpkvvvipaacxjzodleircbtfncxnriujtsyfywvadtbqedbkyduayeaomilolokecbbdfhywadpjqomctlueyqyrepnjaikwnnoubxwezkofkmaklrbqzqbhkcxyejapciqsloxjkbtfoqnzxibwjibllvwcseghuviuicsdxzsxgftvrsgodgemdzwpakwnrwblprmstrknnycavutkfwzolkilpchcvppmhsshdqewzmzscpzzjyljprvnltckkraeshztxmdvbpfqobrfojdsqrczbbcchylazslzkipkyjaukrankpqjgpjswgsunpmxtsxvfdmmyspdrxbrthgjsnweghhtgdmkjtdxkipadsgnalpikiyxwiienssdmtydzyutngajtqpxoiayqabsibvhnyqdoykigutbejabpcvdnalxewclxdpkvyqcrnxwevmxpjadyszwdsuhmxjepyhkqqtzxkwvoatjwiuuyiwqdxeglapwcdwropfiafnyvmmhqankelcdizqgrtzvpubacmeisybaxjrljnpjggicfejqszwlhqajlxoxrbykwuontqzgutsnaxwqqkbzexpbuqrhtmawxnkixgibtlaprmafukylguosuusblqtqzcrljayexovldzxxlalpavvayherqdcbmfksyenmtopqgkgjwhtcnqudzckrfgumgepcyptcfrrrpnxrqaemxfykoaygezpvpfaenlpgtdjmjbpgmfbgjqsqokvvcgjgywosymmhyemmlurtwbxxxmmkdmlfobqnvqrqikfzjyqxetbzbkobexyjsumfhelodcrqkxnojtxdwqldutilveiahtblggblutvtaojsytxjxiufkdctrkrfnfdkotexaqkxtxrozrlogpnetyanqogopbplhnzywaqrrpmsjrgiclsrmhiilpnsitftpoyeytwkyxyoylbrxzlwhminchpqizqycirphfhbxuplpvsacmklhteccxrjdeqfqjnyisxvqdqysynxzjphpdylyxupoxrxqyjneikqzyzggnpiwdydnfklxmwvuovndgdqxybydtudconsbphfgzlmmrjbmbkeuvoibbrecxnjdpacqbbypphygcewxzutomiyqqymfrjsobniuozzqutdkoaznubqljjqtzoebahpdahlmgnrkhuqwwzzrgvujeegsrahvwqwhtyvrdqqfkrdbwgipwxdrltqbc"));//smxnmxncma
+        System.out.println(pivotIndex(new int[]{0,1}));
 
->>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
@@ -530,7 +532,6 @@ public class Practice {
         return max;
     }
 
-<<<<<<< HEAD
     public static void findZigZagSequence(int [] a, int n){
         Arrays.sort(a);
         int mid = (n)/2;
@@ -579,12 +580,6 @@ public class Practice {
         return sb.toString();
     }
 
-    public static boolean isAlphabatic(char ch) {
-        int ascii = ch;
-        // return (ascii >= 97 && ascii <= 122) || (ascii >= 65 && ascii <= 90);
-        return Character.isLetter(ch);
-    }
-
     public static int palindromeIndex(String s) {
         // Write your code here
         boolean isPalindrome = true;
@@ -614,8 +609,8 @@ public class Practice {
             }
         }
         return isPalindrome ? li : -1;
+    }
     
-=======
     public static int climbStairs(int n) {
         int a = 0;
         int b = 1;
@@ -642,7 +637,124 @@ public class Practice {
         }
 
         return maxProfit;
->>>>>>> c8ba710d6afe1e9476565fd3fb7be085b5559cd2
     }
+
+    public static int maxSubArraySum(int a[]) {
+        int size = a.length;
+        int max_so_far = a[0], max_ending_here = 0;
+
+        for (int i = 0; i < size; i++)
+        {
+            max_ending_here = max_ending_here + a[i];
+            if (max_ending_here < 0)
+                max_ending_here = 0;
+            
+            /* Do not compare for all
+            elements. Compare only
+            when max_ending_here > 0 */
+            else if (max_so_far < max_ending_here)
+                max_so_far = max_ending_here;
+            
+        }
+        return max_so_far;
+    }
+
+// This code is contributed by ANKITRAI1
+
+    public static int largestVariance(String s) {
+        int largestVariance = 0;
+        HashMap<Character, Integer> cCount = new HashMap<>();
+        // int maxCount = 0;
+        // for(int i=0; i<s.length(); i++) {
+        //     int currCount = cCount.getOrDefault(s.charAt(i), 0)+1;
+        //     cCount.put(s.charAt(i), currCount);
+        //     if(currCount > maxCount) maxCount = currCount;
+        // }
+        // System.out.println(s.length());
+        // if(maxCount == 1) return 0;
+        // String soFar = "";
+        for(int i=0; i<s.length(); i++) {
+            if((i+largestVariance+1) >= s.length()) break;
+            cCount = new HashMap<>(); 
+            cCount.put(s.charAt(i), cCount.getOrDefault(s.charAt(i), 0)+1);
+
+
+            // if(soFar.contains(s.substring(i))) {
+                // continue;
+            // }
+            // sb.append(s.charAt(i));
+            int currentVariance = 0;
+            Character minKey = Character.MIN_VALUE;
+            int minCount = Integer.MAX_VALUE;
+            for(int j=i+1; j<s.length(); j++) {
+                if((j+largestVariance) >= s.length()) break;
+                int count = cCount.getOrDefault(s.charAt(j), 0);
+                cCount.put(s.charAt(j), ++count);
+                if(minCount > count) {
+                    minCount = count;
+                    minKey = s.charAt(j);
+                } else if(minKey == s.charAt(j)) {
+                    minKey = Character.MIN_VALUE;
+                    minCount = Integer.MAX_VALUE;
+                }
+                int diff = 0;
+                if(cCount.size() > 1) {
+                    if(s.charAt(i) != s.charAt(j)) {
+                        diff = Math.abs(cCount.getOrDefault(s.charAt(i), 0) - cCount.getOrDefault(s.charAt(j), 0));
+                        if(diff > currentVariance) {
+                            currentVariance = diff;
+                            minKey = s.charAt(j);
+                            minCount = cCount.getOrDefault(s.charAt(j), 0);
+                        }
+                    } else {
+                        for(Character key : cCount.keySet()) {
+                            if(key == s.charAt(i)) continue;
+                            if(minKey != s.charAt(i) && minKey != Character.MIN_VALUE) {
+                                diff = Math.abs(cCount.getOrDefault(s.charAt(i), 0) - minCount);
+                                if(diff > currentVariance) {
+                                    currentVariance = diff;
+                                }
+                                break;
+                            } else {
+                                diff = Math.abs(cCount.getOrDefault(s.charAt(i), 0) - cCount.getOrDefault(key, 0));
+                                if(diff > currentVariance) {
+                                    currentVariance = diff;
+                                    minKey = key;
+                                    minCount = cCount.getOrDefault(key, 0);
+                                }
+                            }
+                        }
+                    }
+                }
+                // System.out.println(cCount);
+                // System.out.println(++iteration);
+            }
+            if(currentVariance > largestVariance) largestVariance = currentVariance;
+        }
+        return largestVariance;
+    }
+
+    public static int pivotIndex(int[] nums) {
+        int sum = 0;
+        for(int i=0; i<nums.length; i++) {
+            sum+=nums[i];
+        }
+
+        if(sum - nums[0] == 0) return 0;
+
+        int lSum = 0;
+        int pivot = 0;
+        while(pivot < nums.length) {
+            sum = sum - nums[pivot];
+            if(lSum != sum) {
+                lSum += nums[pivot];
+                pivot++;
+            } else {
+                return pivot;
+            }
+        }
+        return -1;
+    }
+
 
 }
