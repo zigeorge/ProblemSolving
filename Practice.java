@@ -1,16 +1,15 @@
+import static org.junit.Assert.assertArrayEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-<<<<<<< HEAD
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-=======
+
+import org.junit.Test;
+
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
 
 public class Practice {
 
@@ -59,11 +58,9 @@ public class Practice {
         // System.out.println(timeConversion("11:00:01AM"));
         // System.out.println("Find Median " + findMedian(List.of(0,1,6,3,5,7,4)));
         // System.out.println("Find Unique " + lonelyinteger(List.of(1)));
-<<<<<<< HEAD
         // System.out.println("Find Sum " + diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " + countingSort(List.of(1,1,1,1,5,1,2,6,2,5)));
         // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83, 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114, 108))));
-=======
         // System.out.println("Find Sum " +
         // diagonalDifference(List.of(List.of(-1,2,5),List.of(-10,10,4),List.of(-10,10,-11))));
         // System.out.println("Find List " +
@@ -71,7 +68,6 @@ public class Practice {
         // System.out.println("Find max " + flippingMatrix(List.of(List.of(112, 42, 83,
         // 119),List.of(56, 125, 56, 49),List.of(15, 78, 101, 43),List.of(62, 98, 114,
         // 108))));
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
         // findZigZagSequence(new int[]{2,3,5,1,4,7,6}, 7);
         // System.out.println(towerBreakers(7,2));
         // System.out.println(caesarCipher("middle-Outz",22));
@@ -79,17 +75,17 @@ public class Practice {
 
         // System.out.println(climbStairs(45));
         // System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
-<<<<<<< HEAD
         // System.out.println(maxSubArraySum(new int[]{-7,-1,-5,-3,-6,-4}));
         // System.out.println(largestVariance("zcvvynowcmlskevtnpxtwblgxchvfyghobygbboeaynurjvtjsfjpzcjaqjnsgcxwlxbszcreulumbetpfpbyhnacmgglgdxoqlsxoskexjxjsummnekjsldwiisoqkizhulnljwmivpoawcwxqwulkuwvlnbpiqrksgtphnygvmahzcqjxkbmruebmttjhjfpkuaskkrmwmhcxtdcbhwnrdrgipqzwskbwzkkptahzueyapkagogjycobupnexfyikqkuikfzxhapdxoaaptfryourudjaexhcvxcqblhzeikevnqaobtsjfgcuvgvqrdbvuueddngvalrmjlxozgbobyrcwttcksincbtulmwvnxcvycargrhqlzawxkpavfetfiomxiykthpsswwkygrjobvublscngahcqeltlvkfizmbsjmnyjlfaodtidpufagzqxrohctmcefksmxqujxhuerlpxwyecmqfsjxiwtgnlzhfkeqctunrllcjddxtxseimrpdrymwqsrdxqjpyzulcvssgfltyjfynmtgcrhstpjfsqgaxnjjagmghrqxtkibjzwuozwyoqnmdvtvxlqnpbybptnveugatngkkadyunbbmftvumybjviknkqnadrhyzyjlilqzkwafxthlbxoedagpzmxmnfzjoezuizceagrhhhcdvrqmfrqjqhcfqqhiozemxrkqcptogyzcrnmzpcekplbfgdtqitszrgqrlkdmwlxnwroywimfcrfdakzvedxxzakkhxmgdcchwdqnywybnohkwbjvxybvwbannuhlbrnocmedjmwjtfrmomlcbgktkrdwohhrxygebbynnrjvyyedtblyhldtzajlexyiubjurczdytegzuuakiiggosmgqdabgemnvzpgbqsyprigktjoadednwhyyezebkoyubceebbmqeshsbkpnurcsliklbhlqbbctacdikdmghavbjxwhxcnjhdiaollrwtukonmhcluulllxvcguzpqnazdojerrpikoomwscjuqasvknezepcmlhdmerqfryimztmwsfbcsngwisejojinkechatxykspkbhyqvswnegaavxbpfywdhkvbbrbutaiwoeajhkqmpfjchbzrmjfbhbdhcgctbcdhwvkozhartflxykgxhhmwazysnxhomthcypphsjbpvxopqygvalkjvxvwftnnxwoxcupdvnpqmpnbdzncgrifqaqumcsbiqstvskyqjguqmavmfjjysysdzgxlepeccxjgammxmeobyzbwjjajzxpdeaxxjadajcdyewvbvehkmtvtfdqnlllihdiybjrpvmkilxqhnonmuswrgwsxuvqcnrtsnxohkuxhshimsxznfcamqvvktvjeitbfbaojtzxwewiyekqcbnuzzamsadwdemqucfwmahqjykktyukwuzgbyiqnttagkrjieaohgrzxwjujkmlmvwfpblrvqqzwuiefhgzdqdvmfssrnkyxbylsrrmlupjqtrlayzafrentgytadrdzbqvpgfskfystwkvkpievcajkltqsjdvodqqgfqbcsawupkgnbvotsjumjodhttwzryteoorfocpdjmqnhwdqjgvdcmshytaustwprelpzkfuystzcxgexcoindyzzmesknlsyzxfaundmfxfpcdrmczyubmgkvnqgzqnlrjswovxzwznkjgieukikhmkvqdgxhrlzzjjbpcybalkzhyfecgfmjfliqfltzanswgyazdnptflgbblumcbsdbvseqnafhdilmdpfcmqexgeotwdxhcnnemueguvozaevlykkfbxrasvpqiwzrmdskbuuzuqdlmjrqeicnabttqzofsdttjvwzeyeklrwnrvcstgjhjdeiprndgkgpweokxhffdpdxjxootpkvpuxshamsxaxxzeguuslhghwezszbbrjiwwmffdrenxwvobimvcvcgquykbqegbqeaayckrdxitixavrrobsdtxovgsfczdtikeejucicfemmipkddhokggfxwabbppunysfzcfvabomhjnximmlrhxqotnxqhsptunkdnscernxbhqnpkbxnqaeyvjygkkxjzzqlybvvqaybqdzpaeerpcpansadmxvhoqfsvnfunlrdalyqlddiqslgkxqiuhaeagiluvsrtfyaljrsjpqiegegfhscnfzzpiqxgfnjnbixerdkvnlmmwtdicuzqqvjumswgpekfbtmkfemneyclqwvmvjwksczteospbnfrzolpgcvbxkppsjyvhugmufjqdyllcjktrxehpwmivlgnbsjummecqypnwskxdcbarxqqcbxxwewhalclctsaqvmywceppflzvwlkcxhlziwbshpjorqpqevanelvjpdhmfpuoixkisipksbuvxokfdyqxxpwpnvhvpirksdiefcmahsmalmmuwaexloezeaipcysxwsyfhhwvceviiilserjxlgtovblzjhqpmydtfgaqcgmhpstnkcqgxzfbffeuebctofyhorzexhqavagxqgztrekjccrhleqiprvmyhmablqrsfnjnfebyzctmbjgiuxlqgsmhubyekjqgvnecrrwwoqhgyamzqhkwbzykcyvqvhlparxzjaxjikxsuixqkzfsxgllypgamqcwlfizkzwivkjnxsapbaacugcxgnopafcohbqzubwixofrqxagltvbinkdwaauvnccwqpuhaknkvxlqmvanyncfzivxzxlxtckabhizhytvoboelcsafoltektwgdruyucxzplgnvnajvwzruxbpwkufazpjgvvhccqqpebtasfsqkxknitvokhxptejcnfsnirmkbebxsdflthmogkhxxdttoevyfmzbaxellblynxvmnryrygalvsrfylqbctdenynlnnfmnhobitebjbkrjkrkldnecfmutysdvfpvflupzwadttzuihzwuecfyntkquslqjlvnyqlbstzynozmdomzbdhyvvbdhzrfymrztqxqfpxntosmlfgocbbmagqgfboqcjzkfzxmyvyhxklorceqrrimavjaudgwychyzerprkikmtuivblbxrxiltxxtyirbjdsdxlsstnnzdonatcntyhxetmomcvdgtxofsrfwfxbrakmpwkpjrplwxvqdncoasskwxgfttpurllmkgnvqohtliegpooommufowggovxoapgvyoadeyxsbmyvlhborsvyvcjjehgxlupxherqqfpbpzouaupnztdxqxnswusgjasxavmifgsqchchrurhkhdyfzkahilfhnsjofmvicrjjbwfqdoyamndaerpjulrpobregqkoiuhqnpuxdclxmcmsfdudzdofwmrwbhqjnsrpwsxgpyuonnfjcgeljtugdtwxgjtohyjivnpswggxhszugknrgvrygdcwnbehardprlgidkavkdojrdxtclbqrcbmodbxklikomqnsrflzenktlwwgtgeeblhmmvnrqpbxflxbiuzzxqwznvdaffffxvpdnnteczfygcbfxnsvicxsmxoqmebjkdlnhekgasxhgaipejkthwzcakdyzlaovpecipbmeokvgfxrgtvqkkgpyyvykczatektgizvixvbchltobdmihcvmzyksnasftanpyohnmslgktppjvpypdeurcxgrsoanvtjzhzhskivzbjliqeuumkzqtodtpmhcrgbdglajbdtscvxoxibkydandpqzfbgsnaykzjmwfleaejkcfhmzgxjbrlhinnyacpookxatenptfwmplunnbtjhywuudocxfwaiigckqskpyfzngxwxczdeztacjzmdcrfihtyzxrjhdssrufzkrlsfotftrzschqdvmiwwogqykytoexpqexgqylpwromoevedzkcvzhlubfckmleffuvwtvkewfjzybniotjthreqrryvaekfasrqyzjylzxayfxrfrpofibrstqqfftmbvkfidhdgqwjphccsfqqdyjrxwfzjsvmucnlciucnmodrfbkaxzseeiuuazvihrbscpxtzvuielchlupituocqlrrvivoonnpcfkpeajorrxnckggodosezcpeqgrogbkaeicglceegdmbvkzwainoxqcodkrgaakhniwydcosppodsbynotesucujgqeosxitjasxbpidyezygysyweudlyuwqgvnubaxhxlwdfgxwmyjhohyppeftaxkknndltifinaevpptswlphmemkzbtlywpowkfbwomjskhwptqsmbuyutkbruwbqmfdjochwcsdpnxktgoevxkwjainujeqngtroqnomgtvzzndshlvaipqjrcxqmjuxrrqnjwccobvpeylinnhvejlodxgrfirtmpvqtuvnqopoejetedzagruxvatovaefbwwrwsectnqpoxuurykrlrllfrhbcrudvmohubkkdutsfcaehtcvhzhxwqnnnkszmzjaoizpwgqiqsvhblcdjhgpfgfejpdnszvqzlejlsbmwukxptzodshdbzvcycjchcpwxhtzunzuqsxkvzuyunwpljrxuwrbzqmahtmltmgdoveayhcguozimoiuxbnukzjawemjfvgcryyyexbnkyfuwqpkmfyjdeafwfrsytqirshrdzxooukzmkbruuokbkpwbdopzujpjqahavubsktgymfczmbtlzlyistapwgrfxygsqrhkvkrfauduqpknhfbwyffpagyzkfcofvjbnmraextiklynuivodnrahknxowdlrwrfawribmqodyzzxndgnfanpbvqjjwakhcklduahmjdjvwachezghqavcbrehftpxkqzkqtuclgsdfpkxwtacqzbxxjsahcnosrergofndlstvatlqgfgppojeqzmilawlzcqekudbilrdfqcgwnrfcxhgabralrwinwffiwfhtmdjiwwkoqlcwvyrgjqsvcjfcumopiqfuacuolsptqiqhyqwtrutpptpotqtygkkoiykjlofchclepscffgemxjnvnzqabcxsegttsrliybmtsoreijzrvljoecmgouymtrmtheihyivokvcbbcxsqtcazrzldiwnonxfgyrryqujeclpvjhlfkvsgkpmeucdlfsfvmwayinjqztzelyipdzwkavhpacrqizzjegzdrmvpsbbyjpytntocorqifmhprojlzvbveaipkxrsautzklmwfldrjejgluuuloufxhwkbfypiypovxojwiynakxoaddsclfjapqyrscpbkjamvzhvkwrjzasjhqnayjtyhkuszxswcldkojyymxaivuwawtdpitselvykoprtemlfjnsqnrqxlqqidyxlmdvbhjcnmvdbfpeerobsvnrnlbjesjmcdyswhkshoipedwrwhwxjrcalxtppffqsuwqtrnotlthutuwyasebfqrgmmxwzakzjxwpwcbdfyxeszoyulgsfirvnjqzmtgaeldgevojzkwxzynkihthgktywgjqysdpxtqegopwjxombppcrqnskzpkwbvqeziskfvpwrmrrpumsaigwdcarahbcrpkmujdxtzhcoiihnmxlrmufgqomokpifymhfavpslunkwwbwgrvrodetajhhmiplwzfswwfennumxaavqqarsiesxpvriolncrypashsopmhumkxjroyotgllkwikqgplsaknyafdkanrtfydhzctfypnvgfcorbswcfzhjrbueucazprizypkopdwcpmkzeqtiwlugfgyjumjrxnfpwzfvlexhcrcwiguadenaulilekzlrhclxkezbhqsqtwvsrmgxjvykdhqwsuyxmtapmvztcchbkxdjqrooadmnmorquzybexamtlusppraqdzxmnzcdpukabvtkdgmzlzkhfpgbypwtmagbiobrusvlfqyoafljdrqjxaqeuuysqdymhxsmlmjficiovbnhtzvesdauvcrksozgafvymllqmqmrixwbztylhesymklicfgkbzwctksohmtwcxqrlqkujhstssggvhhwvjmydjeovvgjqfoptedsbpvlfburxxmxlxgqzqwzlozglvcgxvdyfpcrieyyamznpgpyfzrzshzimcbzseznebmnevyizhrlllddexufoemlwkflsxthgynoexayicpzmasrdvyxhswfvozjjjmgttbjnayxsqxooxerkxpdhgiapzpvqrknzgrjmczqlsmrzxctrinmcpuilhakqqjhzduuvojhththiyftqnpndnvfvdgmvblnfzgnshtlgwwbbcgeiilvuieryelmnhjqfegyhzgqeygplyhhlgmupxcizbkruwoftnnjiaswckvbycbggzwmldfqtigcgxdqboefoclihtwyggwqdqimawcablijdlgvkiyzzzczitaosbyjtfqwrgpgyshyteyqtaiarbfcrhvixqsnijdvzdllxgqzteluhnfdzazotvlicxswouzbqcgxrpkhniqxgisvkmvcgclnywlcwkhwgdhyhemcbepredvpkvvvipaacxjzodleircbtfncxnriujtsyfywvadtbqedbkyduayeaomilolokecbbdfhywadpjqomctlueyqyrepnjaikwnnoubxwezkofkmaklrbqzqbhkcxyejapciqsloxjkbtfoqnzxibwjibllvwcseghuviuicsdxzsxgftvrsgodgemdzwpakwnrwblprmstrknnycavutkfwzolkilpchcvppmhsshdqewzmzscpzzjyljprvnltckkraeshztxmdvbpfqobrfojdsqrczbbcchylazslzkipkyjaukrankpqjgpjswgsunpmxtsxvfdmmyspdrxbrthgjsnweghhtgdmkjtdxkipadsgnalpikiyxwiienssdmtydzyutngajtqpxoiayqabsibvhnyqdoykigutbejabpcvdnalxewclxdpkvyqcrnxwevmxpjadyszwdsuhmxjepyhkqqtzxkwvoatjwiuuyiwqdxeglapwcdwropfiafnyvmmhqankelcdizqgrtzvpubacmeisybaxjrljnpjggicfejqszwlhqajlxoxrbykwuontqzgutsnaxwqqkbzexpbuqrhtmawxnkixgibtlaprmafukylguosuusblqtqzcrljayexovldzxxlalpavvayherqdcbmfksyenmtopqgkgjwhtcnqudzckrfgumgepcyptcfrrrpnxrqaemxfykoaygezpvpfaenlpgtdjmjbpgmfbgjqsqokvvcgjgywosymmhyemmlurtwbxxxmmkdmlfobqnvqrqikfzjyqxetbzbkobexyjsumfhelodcrqkxnojtxdwqldutilveiahtblggblutvtaojsytxjxiufkdctrkrfnfdkotexaqkxtxrozrlogpnetyanqogopbplhnzywaqrrpmsjrgiclsrmhiilpnsitftpoyeytwkyxyoylbrxzlwhminchpqizqycirphfhbxuplpvsacmklhteccxrjdeqfqjnyisxvqdqysynxzjphpdylyxupoxrxqyjneikqzyzggnpiwdydnfklxmwvuovndgdqxybydtudconsbphfgzlmmrjbmbkeuvoibbrecxnjdpacqbbypphygcewxzutomiyqqymfrjsobniuozzqutdkoaznubqljjqtzoebahpdahlmgnrkhuqwwzzrgvujeegsrahvwqwhtyvrdqqfkrdbwgipwxdrltqbc"));//smxnmxncma
-        System.out.println(pivotIndex(new int[]{0,1}));
-=======
+        // System.out.println(pivotIndex(new int[]{0,1}));
         // System.out.println(arraySum(new ArrayList<>(List.of(7,1,5,3,6,4))));
         // System.out.println(Arrays.toString(mergeSortAlgorithm(new
         // int[]{7,1,5,3,6,4,2})));
         // System.out.println(Arrays.toString(quickSortAlgorithm(new int[] { 7, 1 })));
-        linkedListOps();
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
+        // linkedListOps();
+        // System.out.println(targetIndices(new int[]{1,2,5,2,3,2,1}, 2).toString());
+        // System.out.println(Arrays.toString(kWeakestRows(new int[][]{{1,1,0},{1,0,0},{1,0,0},{1,1,1},{1,1,0},{0,0,0}}, 4)));
+        System.out.println(peakIndexInMountainArray(new int[]{0,10,5,2,0}));
 
     }
 
@@ -562,11 +558,7 @@ public class Practice {
         return max;
     }
 
-<<<<<<< HEAD
-    public static void findZigZagSequence(int [] a, int n){
-=======
     public static void findZigZagSequence(int[] a, int n) {
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
         Arrays.sort(a);
         int mid = (n) / 2;
         int temp = a[mid];
@@ -653,11 +645,7 @@ public class Practice {
         }
         return isPalindrome ? li : -1;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
     public static int climbStairs(int n) {
         int a = 0;
         int b = 1;
@@ -687,7 +675,6 @@ public class Practice {
         return maxProfit;
     }
 
-<<<<<<< HEAD
     public static int maxSubArraySum(int a[]) {
         int size = a.length;
         int max_so_far = a[0], max_ending_here = 0;
@@ -805,9 +792,6 @@ public class Practice {
         return -1;
     }
 
-
-}
-=======
     public static int arraySum(List<Integer> numbers) {
         // Write your code here
         return sum(numbers, numbers.get(0), 1);
@@ -821,24 +805,24 @@ public class Practice {
             return currSum;
     }
 
-    public static int[] mergeSortAlgorithm(int[] arr) {
+    public static Object[] mergeSortAlgorithm(Object[] arr) {
 
         return mergeSort(arr, 0, arr.length - 1);
     }
 
-    public static int[] mergeSort(int[] arr, int start, int end) {
+    public static Object[] mergeSort(Object[] arr, int start, int end) {
         if (start < end) {
             int partition = (start + end) / 2;
-            int[] left = mergeSort(arr, start, partition);
-            int[] right = mergeSort(arr, partition + 1, end);
+            Object[] left = mergeSort(arr, start, partition);
+            Object[] right = mergeSort(arr, partition + 1, end);
             return merge(left, right);
         }
-        return new int[] { arr[start] };
+        return new Object[] { arr[start] };
     }
 
-    public static int[] merge(int[] left, int[] right) {
+    public static Object[] merge(Object[] left, Object[] right) {
         int mIndex = 0, i = 0, j = 0;
-        int[] result = new int[left.length + right.length];
+        Object[] result = new Object[left.length + right.length];
         while (mIndex < left.length + right.length) {
             if (i == left.length && j < right.length) {
                 result[mIndex] = right[j];
@@ -846,7 +830,7 @@ public class Practice {
             } else if (j == right.length && i < left.length) {
                 result[mIndex] = left[i];
                 i++;
-            } else if (left[i] <= right[j]) {
+            } else if ((int)left[i] <= (int)right[j]) {
                 result[mIndex] = left[i];
                 i++;
             } else {
@@ -891,7 +875,7 @@ public class Practice {
     }
 
     public static void linkedListOps() {
-        int[] arr = new int[]{1,2};
+        int[] arr = new int[]{0,9,1,0,1,0,2,1,0};
         ListNode firstNode = new ListNode(arr[0]);
         ListNode head = firstNode;
         ListNode tail = firstNode;
@@ -907,7 +891,7 @@ public class Practice {
         // ListNode rNode = reverseList(head);
         // disPlayListNode(rNode);
         // createHashSet();
-        runHashMap();
+        // runHashMap();
         // Node linkedList = new Node();
         // for(int i=0; i<arr.length; i++) {
         //     linkedList.addNode(arr[i]);
@@ -920,6 +904,8 @@ public class Practice {
         // linkedList.insertAfter(6, 5);
         // linkedList.insertBefore(7, 5);
         // linkedList.disPlay();
+        // System.out.println(hasCycle(firstNode));
+        // disPlayListNode(mergeNodes(head));
     }
 
     public static void disPlayListNode(ListNode head) {
@@ -957,6 +943,22 @@ public class Practice {
             cNode = cNode.next;
         }
         return cNode;
+    }
+
+    public static ListNode middleNode2(ListNode head) {
+        if(head.next == null) return head;
+        else if(head.next.next == null) return head.next;
+        else return middleNode(head.next.next, head.next);
+    }
+
+    public static ListNode middleNode(ListNode fNode, ListNode sNode) {
+        if(fNode.next == null) {
+            return sNode;
+        } else if(fNode.next.next == null) {
+            return sNode.next;
+        } else {
+            return middleNode(fNode.next.next, sNode.next);
+        }
     }
 
     public static void deleteNode(ListNode node) {
@@ -1003,6 +1005,194 @@ public class Practice {
         obj.put(1, 1);
         obj.put(2,2);
         System.out.println(obj.get(1));
+    }
+
+    public static boolean hasCycle(ListNode head) {
+        if(head == null || head.next ==  null || head.next.next == null) return false;
+        
+        ListNode fastPointer = head.next.next;
+        ListNode slowPointer = head.next;
+
+        while (fastPointer != slowPointer) {
+            if(slowPointer.next == null) return false;
+            else slowPointer = slowPointer.next;
+            if(fastPointer.next == null || fastPointer.next.next == null) return false;
+            else fastPointer = fastPointer.next.next;
+        }
+        return true;
+    }
+
+    public static ListNode removeElements(ListNode head, int val) {
+        if(head == null) return head;
+        ListNode curr = head;
+        ListNode prev = head;
+        while(curr != null) {
+            if(curr.val == val) {
+                if(curr.next != null){ 
+                    curr.val = curr.next.val;
+                    curr.next = curr.next.next;
+                } else {
+                    if(prev.next == curr) {
+                        curr = prev;
+                        curr.next = null;
+                    } else {
+                        return null;
+                    }
+                }
+            } else {
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    public static ListNode mergeNodes(ListNode head) {
+        ListNode result = head;
+        ListNode next = head.next;
+        int currSum = 0;
+        while(next != null) {
+            if(next.val == 0) {
+                result = result.next;
+                result.val = currSum;
+                currSum = 0;
+            } 
+            currSum += next.val;
+            next = next.next;
+        }
+        result.next = null;
+        return head.next;
+    }
+
+    public static List<Integer> targetIndices(int[] nums, int target) {
+        int first = 0;
+        int last = nums.length - 1;
+        List<Integer> result = new ArrayList<>();
+
+        for(int i = 0; i<nums.length; i++) {
+            if(nums[i] < target) {
+                first++;
+            } else if(nums[i] > target) {
+                last--;
+            }
+        }
+        while(first<=last) {
+            result.add(first);
+            first++;
+        }
+        return result;
+    }
+
+    public static int countNegatives(int[][] grid) {
+        int i = 0, j = grid[0].length-1;
+        int count = 0;
+        while(i<grid.length) {
+            if(grid[i][j] < 0) {
+                count += (grid.length - i);
+                j--;
+            } else {
+                i++;
+            }
+        }
+        return count;
+    }
+    // 5120
+// {{1,1,0},{1,0,0},{1,0,0},{1,1,1},{1,1,0},{0,0,0}}
+    public static int[] kWeakestRows(int[][] mat, int k) {
+        int[] counts = new int[mat.length];
+        int[] result = new int[k];
+        int[] rank = new int[mat.length];
+        
+        for(int i=0; i<mat.length; i++) {
+            counts[i] = countOne(mat[i]);
+            rank[i] = i;
+        }
+        for(int i=0; i<counts.length-1; i++) {
+            int keyIndex = i+1;
+            int key = counts[keyIndex];
+            for(int j=i; j>=0; j--) {
+                if(key < counts[j]) {
+                    swap(counts, keyIndex, j);
+                    swap(rank, keyIndex, j);
+                    keyIndex = j;
+                }
+            }
+        }
+        for(int i=0; i<k; i++) {
+            result[i] = rank[i];
+        }
+        return result;
+    }
+
+    public static int countOne(int[] row) {
+        int count = 0;
+        for(int i=0; i<row.length; i++) {
+            if(row[i] == 1) count++;
+        }
+        return count;
+    }
+
+    public static int peakIndexInMountainArray(int[] arr) {
+        int peak = arr.length/2;
+        int l = peak-1, h = peak+1;
+        while(peak > 0 && peak < arr.length-1) {
+            if(arr[peak] > arr[l] && arr[peak] > arr[h]) {
+                return peak;
+            } else if(arr[peak] < arr[l]) {
+                peak = l;
+                l--;
+            } else {
+                peak = h;
+                h++;
+            }
+        }
+        return -1;
+    }
+
+    // public static int[] intersection(int[] nums1, int[] nums2) {
+    //     //TODO marakha
+    // }
+
+    public static HashSet<Integer> addArrInSet(int[] nums) {
+        HashSet<Integer> result = new HashSet<>();
+        for(int i=0; i<nums.length; i++) {
+            result.add(nums[i]);
+        }
+        return result;
+    }
+
+    public static int mySqrt(int x) {
+        int[] nums = getNumsFrom(x);
+        int indexPassed = 0;
+        StringBuilder result = new StringBuilder();
+        while(indexPassed < nums.length) {
+            // int divisible = getNextDivisible(indexPassed, nums);
+            // int divider = getNextDivider(result, divisible);
+            // result.append(divider);
+            indexPassed+=2;
+        }
+        return 0;
+    }
+
+    public static int[] getNumsFrom(int value) {
+        String valueInStr = Integer.toString(value);
+        int[] nums = new int[valueInStr.length()];
+        int index = 0;
+        
+        while(value > 0) {
+            int remainder = value%10;
+            nums[index] = remainder;
+            value = value - remainder;
+            index++;
+        }
+        return nums;
+    }
+
+    @Test
+    public void getNumsFromShouldReturnValidArray() {
+        int[] result = getNumsFrom(80);
+
+        assertArrayEquals("message", new int[]{8,0}, result);
     }
 
 }
@@ -1282,5 +1472,3 @@ class Entry {
         this.value = value;
     }
 }
- 
->>>>>>> b340fed7b326ac0d58e7dc27d942c5fd2a2ca0ec
