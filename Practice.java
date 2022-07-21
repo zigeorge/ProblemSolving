@@ -908,6 +908,33 @@ public class Practice {
         // disPlayListNode(mergeNodes(head));
     }
 
+    public static ListNode createLinkedList(int[] arr) {
+        ListNode firstNode = new ListNode(arr[0]);
+        ListNode head = firstNode;
+        ListNode tail = firstNode;
+        int index = 1;
+        while(index < arr.length) {
+            ListNode newNode = new ListNode(arr[index]);
+            tail.next = newNode;
+            tail = newNode;
+            index++;
+        }
+        return head;
+    }
+
+    public static int[] fromLinkedList(ListNode head) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        while(head != null) {
+            arrayList.add(head.val);
+            head = head.next;
+        }
+        int[] arr = new int[arrayList.size()];
+        for(int i=0; i<arr.length; i++) {
+            arr[i] = arrayList.get(i);
+        }
+        return arr;
+    }
+
     public static void disPlayListNode(ListNode head) {
         while(head != null) {
             System.out.print(head.val+ " ");
