@@ -2,7 +2,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -76,6 +75,30 @@ public class Leetcode75 {
         List<Integer> spiralList = spiralOrder(matrix);
 
         assertEquals(Arrays.asList(1,2,3,6,9,8,7,4,5), spiralList);
+    }
+
+    public int[] findBall(int[][] grid) {
+        int m = grid.length, n = grid[0].length;
+        int[] answer = new int[n];
+        for(int j=0; j<n; j++) {
+            int i = m-1;
+            if(j == 0 && grid[i][j] == 1) answer[j] = -1;
+            else if(j == n-1 && grid[i][j] == -1) answer[j] = -1;
+            if(j<n-1) {
+                int current = grid[i][j];
+                while(i >= 0) {
+                    if(grid[i][j] == grid[i][j+1] && grid[i][j] != current) {
+                        current = grid[i][j];
+                        i--;
+                    } else if() {
+                        
+                    } else if(grid[i][j] != grid[i][j+1]) {
+                        answer[j] = -1;
+                        break;
+                    }                    
+                }
+            }
+        }
     }
 
 }
