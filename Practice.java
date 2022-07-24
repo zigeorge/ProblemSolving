@@ -877,7 +877,6 @@ public class Practice {
     public static void linkedListOps() {
         int[] arr = new int[]{0,9,1,0,1,0,2,1,0};
         ListNode firstNode = new ListNode(arr[0]);
-        ListNode head = firstNode;
         ListNode tail = firstNode;
         int index = 1;
         while(index < arr.length) {
@@ -1191,7 +1190,6 @@ public class Practice {
     public static int mySqrt(int x) {
         int[] nums = getNumsFrom(x);
         int indexPassed = 0;
-        StringBuilder result = new StringBuilder();
         while(indexPassed < nums.length) {
             // int divisible = getNextDivisible(indexPassed, nums);
             // int divider = getNextDivider(result, divisible);
