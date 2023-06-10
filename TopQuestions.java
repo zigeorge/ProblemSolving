@@ -4,9 +4,11 @@ import static org.junit.Assert.assertEquals;
 import java.math.BigInteger;
 import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
@@ -613,7 +615,7 @@ public class TopQuestions {
         return pathSum(root.left, targetSum) + dfs(root, targetSum) + pathSum(root.right, targetSum);
     }
 
-    public int dfs(TreeNode root, int target) {
+    public int dfs(TreeNode root, long target) {
         if(root == null) {
             return 0;
         }
@@ -623,12 +625,13 @@ public class TopQuestions {
         result += dfs(root.right, target-root.val);
         return result;
     }
-
+// 1000000000,1000000000,null,294967296,null,1000000000,null,1000000000,null,1000000000
     @Test
     public void testPathSum() {
-        TreeNode root = TreeNode.creatTreeNode(new Integer[]{1,null,2,null,null,null,3,null,null,null,null,null,null,null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,5});
-        int pathSum = pathSum(root, 3);
-        assertEquals(2, pathSum);
+        TreeNode root = new TreeNode(1000000000, new TreeNode(1000000000, new TreeNode(294967296, new TreeNode(1000000000, 
+        new TreeNode(1000000000, new TreeNode(1000000000), null), null), null), null), null);
+        int pathSum = pathSum(root, 0);
+        assertEquals(0, pathSum);
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
@@ -636,10 +639,13 @@ public class TopQuestions {
     }
 
     public TreeNode dfs(int[] nums, int left, int right) {
-        int mid = (left + (right - left))/2;
-        TreeNode root = new TreeNode(nums[mid]);
-        root.left = dfs(nums, left, mid-1);
-        root.right = dfs(nums, mid+1, right);
+        TreeNode root = null;
+        if(left <= right) {
+            int mid = (left + right)/2;
+            root = new TreeNode(nums[mid]);
+            root.left = dfs(nums, left, mid-1);
+            root.right = dfs(nums, mid+1, right);
+        }
         return root;
     }
 
@@ -647,7 +653,186 @@ public class TopQuestions {
     public void testSortedArrayToBST() {
         TreeNode result = sortedArrayToBST(new int[]{1,2,3,4,5,6});
         int[] resArr = TreeNode.toArray(result);
-        assertArrayEquals(new int[]{3,2,1,5,4,6}, resArr);
+        assertArrayEquals(new int[]{3,1,2,5,4,6}, resArr);
+    }
+
+    public int kthSmallest(TreeNode root, int k) {
+        int[] arr = TreeNode.toArray(root);
+        Arrays.sort(arr);
+        return arr[k-1];
+    }
+
+    //if any adjacent cells are > cell value continue
+    //if 
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+        List<List<Integer>> result = new ArrayList<>();
+        int m = heights.length, n = heights[0].length;
+        boolean[][] pac = new boolean[m][n];
+        boolean[][] atl = new boolean[m][n];
+        for(int i = 0; i<n; i++) {
+            dfs(heights, 0, i, heights[0][i], pac);
+            dfs(heights, m-1, i, heights[m-1][i], atl);
+        }
+        for(int i = 0; i<m; i++) {
+            dfs(heights, i, 0, heights[i][0], pac);
+            dfs(heights, i, n-1, heights[i][n-1], atl);
+        }
+        for(int i = 0; i<m; i++) {
+            for(int j=0; j<n; j++) {
+                if(pac[i][j] && atl[i][j]) {
+                    result.add(Arrays.asList(i, j));
+                }
+            }
+        }
+        return result;
+    }
+
+    public void dfs(int[][] heights, int r, int c, int prevHeight, boolean[][] stor) {
+        if(stor[r][c]
+            || r < 0 || r == heights.length
+            || c < 0 || c == heights[0].length
+            || heights[r][c] < prevHeight) {
+            return;
+        }
+        stor[r][c] = true;;
+        dfs(heights, r+1, c, heights[r][c], stor);
+        dfs(heights, r-1, c, heights[r][c], stor);
+        dfs(heights, r, c+1, heights[r][c], stor);
+        dfs(heights, r, c-1, heights[r][c], stor);
+    }
+
+    @Test
+    public void testPacificAtlantic() {
+        List<List<Integer>> result = pacificAtlantic(new int[][]{
+            {1, 2, 3,  4,  5,  6,  7,  8,  9,  10, 11, 12,13},//1
+            {48,49,50, 51, 52, 53, 54, 55, 56, 57, 58, 59,14},//2
+            {47,88,89, 90, 91, 92, 93, 94, 95, 96, 97, 60,15},//3
+            {46,87,120,121,122,123,124,125,126,127,98, 61,16},//4
+            {45,86,119,144,145,146,147,148,149,128,99, 62,17},//5
+            {44,85,118,143,160,161,162,163,150,129,100,63,18},//6
+            {43,84,117,142,159,168,169,164,151,130,101,64,19},//7
+            {42,83,116,141,158,167,166,165,152,131,102,65,20},//8
+            {41,82,115,140,157,156,155,154,153,132,103,66,21},//9
+            {40,81,114,139,138,137,136,135,134,133,104,67,22},//10
+            {39,80,113,112,111,110,109,108,107,106,105,68,23},//11
+            {38,79,78, 77, 76, 75, 74, 73, 72, 71, 70, 69,24},//12
+            {37,36,35, 34, 33, 32, 31, 30, 29, 28, 27, 26,25}//13
+            });
+        assertEquals(true, true);
+    }
+// [[1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13],
+// [48,49,50,51,52,53,54,55,56,57,58,59,14],
+// [47,88,89,90,91,92,93,94,95,96,97,60,15],
+// [46,87,120,121,122,123,124,125,126,127,98,61,16],
+// [45,86,119,144,145,146,147,148,149,128,99,62,17],
+// [44,85,118,143,160,161,162,163,150,129,100,63,18],
+// [43,84,117,142,159,168,169,164,151,130,101,64,19],
+// [42,83,116,141,158,167,166,165,152,131,102,65,20],
+// [41,82,115,140,157,156,155,154,153,132,103,66,21],
+// [40,81,114,139,138,137,136,135,134,133,104,67,22],
+// [39,80,113,112,111,110,109,108,107,106,105,68,23],
+// [38,79,78,77,76,75,74,73,72,71,70,69,24],
+// [37,36,35,34,33,32,31,30,29,28,27,26,25]]
+
+/*
+ * [[0, 12], [1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], 
+ * [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [2, 0], [2, 1], 
+ * [2, 2], [2, 3], [2, 4], [2, 5], [2, 6], [2, 7], [2, 8], [2, 9], [2, 10], 
+ * [2, 11], [2, 12], [3, 0], [3, 1], [3, 2], [3, 3], [3, 4], [3, 5], [3, 6], 
+ * [3, 7], [3, 8], [3, 9], [3, 10], [3, 11], [3, 12], [4, 0], [4, 1], [4, 2], 
+ * [4, 3], [4, 4], [4, 5], [4, 6], [4, 7], [4, 8], [4, 9], [4, 10], [4, 11], 
+ * [4, 12], [5, 0], [5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 7], 
+ * [5, 8], [5, 9], [5, 10], [5, 11], [5, 12], [6, 0], [6, 1], [6, 2], [6, 3], 
+ * [6, 4], [6, 5], [6, 6], [6, 7], [6, 8], [6, 9], [6, 10], [6, 11], [6, 12], 
+ * [7, 0], [7, 1], [7, 2], [7, 3], [7, 4], [7, 5], [7, 6], [7, 7], [7, 8], 
+ * [7, 9], [7, 10], [7, 11], [7, 12], [8, 0], [8, 1], [8, 2], [8, 3], [8, 4], 
+ * [8, 5], [8, 6], [8, 7], [8, 8], [8, 9], [8, 10], [8, 11], [8, 12], [9, 0], 
+ * [9, 1], [9, 2], [9, 3], [9, 4], [9, 5], [9, 6], [9, 7], [9, 8], [9, 9], 
+ * [9, 10], [9, 11], [9, 12], [10, 0], [10, 1], [10, 2], [10, 3], [10, 4], [10, 5], 
+ * [10, 6], [10, 7], [10, 8], [10, 9], [10, 10], [10, 11], [10, 12], [11, 0], [11, 1], 
+ * [11, 2], [11, 3], [11, 4], [11, 5], [11, 6], [11, 7], [11, 8], [11, 9], [11, 10], [11, 11], 
+ * [11, 12], [12, 0], [12, 1], [12, 2], [12, 3], [12, 4], [12, 5], [12, 6], [12, 7], [12, 8], [12, 9], [12, 10], [12, 11], [12, 12]]
+ */
+
+    public int numBusesToDestination(int[][] routes, int source, int target) {
+        HashMap<Integer, List<List<Integer>>> paths = new HashMap<>();
+        for(int i=0; i<routes.length; i++) {
+            for(int j=0; j<routes[i].length; j++) {
+                List<List<Integer>> busRoute = paths.getOrDefault(routes[i][j], new ArrayList<>());
+                ArrayList<Integer> r = new ArrayList<>();
+                for(int k=0; k<routes[i].length; k++) {
+                    r.add(routes[i][k]);
+                }
+                busRoute.add(r);
+                paths.put(routes[i][j], busRoute);
+            }
+        }
+        List<List<Integer>> sourceRoutes = paths.getOrDefault(source, new ArrayList<>());
+        List<List<Integer>> targetRoutes = paths.getOrDefault(target, new ArrayList<>());
+        if(sourceRoutes.isEmpty() || targetRoutes.isEmpty()) return -1;
+        int numOfBuses = 0;
+        for(int i=0; i<sourceRoutes.size(); i++) {
+            for(int j=0; j<sourceRoutes.get(i).size(); j++) {
+                numOfBuses += dfs(sourceRoutes.get(i), paths, numOfBuses, target);
+            }
+        }
+        return -1;
+    }
+
+    public int dfs(List<Integer> routes, HashMap<Integer, List<List<Integer>>> paths, int numOfBuses, int target) {
+        if(routes.contains(target)) {
+            return numOfBuses + 1;
+        }
+        return 1;
+    }
+
+    public void calc(double la1, double lo1, double heading) {
+        long lngConst = 111320;
+        long latConst = 110540;
+        long distance = 1000;
+        double dx = distance*Math.cos(heading);
+        double dy = distance*Math.sin(heading);
+        double deltaLat = dy/latConst;
+        double deltaLon = dx/lngConst;
+        double la2 = la1 + deltaLat;
+        double lo2 = lo1 + deltaLon;
+        // double lat = 53.46036882190762;
+        // double heading = 344.19529122029735;
+        System.out.println(la2+" "+lo2);
+        
+    }
+
+    @Test
+    public void testCalc() {
+        calc(53.58500747958201, 9.807045083858156, 71.63840043828377);
+        assertEquals(true, true);
+    }
+
+}
+
+class Pair {
+    int i;
+    int j;
+
+    Pair(int i, int j) {
+        this.i = i;
+        this.j = j;
+    }
+
+    public int getI() {
+        return this.i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
+    public int getJ() {
+        return this.j;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
     }
 
 }

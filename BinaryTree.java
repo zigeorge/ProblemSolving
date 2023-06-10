@@ -22,6 +22,31 @@ public class BinaryTree {
         // Arrays.sort(result);
         assertArrayEquals(new int[]{1,2,4,5,3,6,7}, result);
     }
+
+    @Test
+    public void testBSTIterator() {
+        TreeNode root = TreeNode.creatTreeNode(new Integer[] {7,3,15,null,null,9,20});
+        BSTIterator it = new BSTIterator(root);
+        assertEquals(true, it != null);
+        int next = it.next();
+        assertEquals(3, next);
+        next = it.next();
+        assertEquals(7, next);
+        boolean hasNext = it.hasNext();
+        assertEquals(true, hasNext);
+        next = it.next();
+        assertEquals(9, next);
+        hasNext = it.hasNext();
+        assertEquals(true, hasNext);
+        next = it.next();
+        assertEquals(15, next);
+        hasNext = it.hasNext();
+        assertEquals(true, hasNext);
+        next = it.next();
+        assertEquals(20, next);
+        hasNext = it.hasNext();
+        assertEquals(false, hasNext);
+    }
 }
 
 class TreeNode {
@@ -87,4 +112,26 @@ class TreeNode {
         return root;
     }
 
+}
+//[3,7,null,15,9,20]
+class BSTIterator {
+    private Queue<Integer> qu = new LinkedList<>();
+    public BSTIterator(TreeNode root) {
+        addToQueue(root);
+    }
+
+    private void addToQueue(TreeNode root) {
+        if(root == null) return;
+        addToQueue(root.left);
+        qu.add(root.val);
+        addToQueue(root.right);
+    }
+    
+    public int next() {
+        return qu.poll();
+    }
+    
+    public boolean hasNext() {
+        return !qu.isEmpty() && qu.peek() != null;
+    }
 }
